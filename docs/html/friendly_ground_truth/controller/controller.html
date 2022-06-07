@@ -1,0 +1,3375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.8.1" />
+<title>friendly_ground_truth.controller.controller API documentation</title>
+<meta name="description" content="File Name: controller.py …" />
+<link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' rel='stylesheet'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/8.0.0/sanitize.min.css' rel='stylesheet'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+<style>.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>friendly_ground_truth.controller.controller</code></h1>
+</header>
+<section id="section-intro">
+<p>File Name: controller.py</p>
+<p>Authors: Kyle Seidenthal</p>
+<p>Date: 13-05-2020</p>
+<p>Description: Main controller for the application</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;
+File Name: controller.py
+
+Authors: Kyle Seidenthal
+
+Date: 13-05-2020
+
+Description: Main controller for the application
+
+&#34;&#34;&#34;
+from friendly_ground_truth.view.main_window import MainWindow
+from friendly_ground_truth.view.preview_window import PreviewWindow
+from friendly_ground_truth.controller.tools import (ThresholdTool,
+                                                    AddRegionTool,
+                                                    RemoveRegionTool,
+                                                    NoRootTool,
+                                                    FloodAddTool,
+                                                    FloodRemoveTool,
+                                                    PreviousPatchTool,
+                                                    NextPatchTool,
+                                                    UndoTool,
+                                                    RedoTool)
+
+from friendly_ground_truth.controller.undo_manager import UndoManager
+from friendly_ground_truth.model.model import Image
+from friendly_ground_truth.controller.event_logger import EventLogger
+
+# from skimage import segmentation, img_as_ubyte
+from skimage.draw import rectangle_perimeter
+
+from sys import platform
+
+import os
+import copy
+import json
+import re
+
+import tkinter.filedialog
+import tkinter.messagebox
+
+import numpy as np
+
+import logging
+module_logger = logging.getLogger(&#39;friendly_gt.controller.controller&#39;)
+
+
+class Controller():
+    &#34;&#34;&#34;
+    Main controller for the application.
+
+    Attributes:
+        image_tools: A dictionary of tools keyed by their id
+    &#34;&#34;&#34;
+    CONTEXT_TRANSPARENCY = 100
+    NUM_PATCHES = 10
+
+    DEFAULT_PREFS = {&#39;theme&#39;: &#39;Light&#39;}
+
+    def __init__(self, root):
+        &#34;&#34;&#34;
+        Create a Controller object
+
+        Args:
+            root: The tk Root
+
+        Returns:
+            A controller object
+
+        Postconditions:
+            The main application window is started
+        &#34;&#34;&#34;
+        # ------------------------------------
+        # Private Attributes
+        # -----------------------------------
+
+        self.PREFERENCES_PATH = self.get_preferences_path()
+        self._grid_img = None
+        # The root tkinter object
+        self._root = root
+        # For logging
+        self._logger = logging.getLogger(&#39;friendly_gt.controller.&#39;
+                                         &#39;controller.Controller&#39;)
+
+        self._event_logger = EventLogger()
+
+        # The last directory used to load an image
+        self._last_load_dir = None
+        # The last directory used to save an image
+        self._last_save_dir = None
+
+        self._autosave_dir = None
+
+        # Image containing neighbouring patches
+        self._context_img = None
+
+        # For managing undo operations
+        self._undo_manager = UndoManager()
+        # A dictionary of image tools
+        self._image_tools = {}
+        self._init_tools()
+
+        # Initialize the main window
+        self._main_window = MainWindow(self._root, self)
+
+        # The path to the current image
+        self._image_path = None
+
+        # The current image
+        self._image = None
+
+        # The index of the current patch in _image.patches
+        self._current_patch_index = 0
+
+        # Whether the mask has been saved
+        self._mask_saved = False
+
+        # The current tool in use
+        self._current_tool = None
+
+        # The offset of the current patch within the context image
+        self._patch_offset = (0, 0)
+
+        # Whether the mask preview has been shown or not
+        self._previewed = False
+
+        # Disable the redo button for now
+        self._main_window.disable_button(self._redo_id)
+        self._main_window.disable_button(self._undo_id)
+
+        self._ask_save_dir()
+
+    @property
+    def image_tools(self):
+        &#34;&#34;&#34;
+        A dictionary of available tools for annotating the image with.
+        &#34;&#34;&#34;
+        return self._image_tools
+
+    # ===================================================
+    # PUBLIC FUNCTIONS
+    # ===================================================
+    def get_preferences_path(self):
+        &#34;&#34;&#34;
+        Return the path to the preferences file.
+
+
+        Returns:
+            The path to the preferences file.
+        &#34;&#34;&#34;
+        if platform != &#39;win32&#39;:
+
+            home = os.path.expanduser(&#34;~&#34;)
+            data_dir = os.path.join(home, &#34;.friendly_ground_truth/&#34;)
+
+            if not os.path.exists(data_dir):
+                os.mkdir(data_dir)
+
+            preferences_path = os.path.join(data_dir,
+                                            &#34;user_preferences.json&#34;)
+
+        else:
+            preferences_path = &#34;./user_preferences.json&#34;
+
+        return preferences_path
+
+    def load_existing_mask(self):
+        &#34;&#34;&#34;
+        Load in an existing annotation mask.
+
+
+        Returns:
+            False if the the mask cannot be loaded.
+        &#34;&#34;&#34;
+        if self._image is None:
+            tkinter.messagebox.showinfo(&#34;No Image Loaded&#34;,
+                                        &#34;You must load an image before &#34;
+                                        &#34; loading an existing mask!&#34;)
+
+            return False
+
+        self._context_img = None
+        self._grid_img = None
+
+        filetypes = [(&#34;PNG Files&#34;, &#34;*.png&#34;), (&#34;JPEG Files&#34;, &#34;*.jpg&#34;)]
+
+        if self._last_load_dir is None:
+            initial_dir = os.path.expanduser(&#34;~&#34;)
+        else:
+            initial_dir = self._last_load_dir
+
+        file_name = tkinter.filedialog.askopenfilename(filetypes=filetypes,
+                                                       initialdir=initial_dir)
+
+        self._logger.debug(&#34;Selected mask: {}&#34;.format(file_name))
+        # Make sure the names are similar
+        mask_filename = os.path.split(file_name)[-1]
+
+        image_filename = \
+            os.path.splitext(os.path.split(self._image_path)[-1])[0]
+
+        if image_filename not in mask_filename:
+            tkinter.messagebox.showinfo(&#34;Invalid Mask&#34;,
+                                        &#34;The name of the mask you have chosen&#34;
+                                        &#34; does not match the name of the &#34;
+                                        &#34;loaded image.&#34;)
+
+            return False
+
+        if file_name is None or file_name == ():
+            return False
+
+        try:
+            self._main_window.start_progressbar(self.NUM_PATCHES ** 2)
+
+
+            self._image.load_mask(file_name)
+
+        except FileNotFoundError:
+            self._logger.exception(&#34;There was a problem loading the image.&#34;)
+            return False
+
+        image_shape = self._image.image.shape
+        patch_grid_shape = self._image.patches[0].patch.shape
+
+        self._event_logger.log_load_mask(image_filename, image_shape[1],
+                                         image_shape[0], patch_grid_shape[1],
+                                         patch_grid_shape[0])
+
+        self._current_patch_index = 0
+
+        self._logger.debug(&#34;Displaying patch.&#34;)
+        self._display_current_patch(new=True)
+
+        self.activate_tool(self._default_tool)
+        self._main_window.set_default_tool(self._default_tool)
+
+    def load_new_image(self):
+        &#34;&#34;&#34;
+        Load a new image with a file dialog.
+
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+
+        self._context_img = None
+        self._grid_img = None
+        self._event_logger.active_tool = &#34;None&#34;
+
+        filetypes = [(&#34;TIF Files&#34;, &#34;*.tif&#34;), (&#34;TIFF Files&#34;, &#34;*.tiff&#34;),
+                     (&#34;PNG Files&#34;, &#34;*.png&#34;), (&#34;JPEG Files&#34;, &#34;*.jpg&#34;)]
+
+        if self._last_load_dir is None:
+            initial_dir = os.path.expanduser(&#34;~&#34;)
+        else:
+            initial_dir = self._last_load_dir
+
+        file_name = tkinter.filedialog.askopenfilename(filetypes=filetypes,
+                                                       initialdir=initial_dir)
+
+        if file_name is None or file_name == ():
+            return
+
+        self._last_load_dir = os.path.split(file_name)[0]
+
+        self._image_path = file_name
+
+        try:
+            self._main_window.start_progressbar(self.NUM_PATCHES ** 2)
+
+            del self._image
+            self._image = Image(file_name, 10, self._update_progressbar)
+
+        except FileNotFoundError:
+            self._logger.exception(&#34;There was a problem loading the image.&#34;)
+            return
+
+        image_filename = os.path.split(file_name)[-1]
+        image_shape = self._image.image.shape
+        patch_grid_shape = self._image.patches[0].patch.shape
+
+        self._event_logger.log_load_image(image_filename, image_shape[1],
+                                          image_shape[0], patch_grid_shape[1],
+                                          patch_grid_shape[0])
+
+        self._current_patch_index = 0
+
+        self._display_current_patch(new=True)
+        self._main_window.update_image_indicator(self._image_path)
+
+        self.activate_tool(self._default_tool)
+        self._main_window.set_default_tool(self._default_tool)
+
+    def save_mask(self):
+        &#34;&#34;&#34;
+        Save the finished image mask.
+
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+
+        if self._image is None:
+            return
+
+        self._mask_saved = True
+
+        if self._last_save_dir is None:
+            initial_dir = os.path.expanduser(&#34;~&#34;)
+        else:
+            initial_dir = self._last_save_dir
+
+        dir_path = tkinter.filedialog.askdirectory(initialdir=initial_dir)
+
+        if dir_path is None:
+            return
+
+        self._last_save_dir = dir_path
+
+        image_name = self._get_image_name_from_path(self._image_path)
+        # labels_name = self._get_landmark_name_from_path(self._image_path)
+
+        mask_pathname = os.path.join(dir_path, image_name)
+        # label_pathname = os.path.join(dir_path, labels_name)
+
+        try:
+            self._image.export_mask(mask_pathname)
+            # self._image.export_labels(label_pathname)
+
+            tkinter.messagebox.showinfo(&#34;Image Mask Saved!&#34;,
+                                        &#34;Image Mask Saved!&#34;)
+        except IOError:
+            self._logger.error(&#34;Could not save file!&#34;)
+
+        self._previewed = False
+
+    def set_preferences(self, preferences):
+        &#34;&#34;&#34;
+        Set the current preferences for the application.
+
+        Args:
+            preferences: A dictionary of preferences and their values.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        theme = preferences[&#39;theme&#39;]
+
+        self._main_window.set_theme(theme)
+
+    def load_preferences(self):
+        &#34;&#34;&#34;
+        Load the preferences saved in the preferences file.
+
+
+        Returns:
+            A dictionary containing the user&#39;s preferences.
+        &#34;&#34;&#34;
+        if not os.path.exists(self.PREFERENCES_PATH):
+            return self.DEFAULT_PREFS
+
+        with open(self.PREFERENCES_PATH, &#39;r&#39;) as fin:
+            preferences = json.load(fin)
+
+        return preferences
+
+    def save_preferences(self, preferences):
+        &#34;&#34;&#34;
+        Save the user preferences.
+
+        Args:
+            preferences: A dictionary containing the user preferences.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+
+        with open(self.PREFERENCES_PATH, &#39;w&#39;) as fout:
+            json.dump(preferences, fout)
+
+    def activate_tool(self, id):
+        &#34;&#34;&#34;
+        Activate the given tool id.
+
+        Args:
+            id: The id of the tool.
+
+        Returns:
+            None
+
+        Postcondition:
+            The current tool is set to the tool matching the id
+            Any activation functionality of the tool is performed.
+        &#34;&#34;&#34;
+        if self._image is None:
+            return
+
+        tool = self.image_tools[id]
+        tool.image = self._image
+        tool.patch = self._image.patches[self._current_patch_index]
+
+        old_tool = None
+
+        if not tool.persistant:
+            old_tool = self._current_tool
+        else:
+            self._event_logger.active_tool = tool.name
+
+        self._current_tool = tool
+
+        tool.on_activate(self._current_patch_index)
+
+        if old_tool is not None:
+            self._current_tool = old_tool
+            tool = old_tool
+
+        tool.lock_undos()
+        # self._display_current_patch()
+        self._main_window.update_info_panel(tool)
+        self._main_window.set_canvas_cursor(tool.cursor)
+        tool.unlock_undos()
+
+        if not self._undo_manager.undo_empty:
+            self._main_window.enable_button(self._undo_id)
+
+    def adjust_tool(self, direction):
+        &#34;&#34;&#34;
+        Adjust the current tool.
+
+        Args:
+            direction: An integer, positive is up, negative is down.
+
+        Returns:
+            None
+
+        Postconditions:
+            The current tool&#39;s adjust tool function is called.
+        &#34;&#34;&#34;
+        self._current_tool.on_adjust(direction)
+        # self._display_current_patch()
+
+        if not self._undo_manager.undo_empty:
+            self._main_window.enable_button(self._undo_id)
+
+    def click_event(self, pos):
+        &#34;&#34;&#34;
+        A click event in the main window has occured.
+
+        Args:
+            pos: The position of the event.
+
+        Returns:
+            None
+
+        Postconditions:
+            The current tool&#39;s on_click() function is called.
+        &#34;&#34;&#34;
+        # Correct for offset in context image
+        pos = pos[0] - self._patch_offset[1], pos[1] - self._patch_offset[0]
+
+        # Need to invert the position, because tkinter coords are backward from
+        # skimage
+        pos = round(pos[1]-1), round(pos[0]-1)
+
+        self._logger.debug(&#34;Click Event: {}&#34;.format(pos))
+
+        if self._current_tool is not None:
+            self._current_tool.on_click(pos)
+
+        if not self._undo_manager.undo_empty:
+            self._main_window.enable_button(self._undo_id)
+
+    def drag_event(self, pos, drag_id=None):
+        &#34;&#34;&#34;
+        A click event in the main window has occured.
+
+        Args:
+            pos: The position of the event.
+            drag_id: Unique identifier for the drag event.
+
+        Returns:
+            None
+
+        Postconditions:
+            The current tool&#39;s on_drag() function is called.
+        &#34;&#34;&#34;
+        # Correct for offset in context image
+        pos = pos[0] - self._patch_offset[1], pos[1] - self._patch_offset[0]
+
+        # Need to invert the position, because tkinter coords are backward from
+        # skimage
+        pos = round(pos[1]-1), round(pos[0]-1)
+
+        self._current_tool.on_drag(pos, drag_id=drag_id)
+
+        if not self._undo_manager.undo_empty:
+            self._main_window.enable_button(self._undo_id)
+
+    def navigate_to_patch(self, pos):
+        &#34;&#34;&#34;
+        Navigate to the patch containing the given coordinates in the original
+        image.
+
+        Args:
+            pos: The position in the image to go to.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+
+        pos = (pos[1], pos[0])
+
+        patch_index = self._image.get_patch_from_coords(pos)
+
+        patch = self._image.patches[patch_index]
+
+        self._next_patch_callback(patch, patch_index)
+
+    def log_mouse_event(self, pos, event, button):
+        &#34;&#34;&#34;
+        Add a mouse event to the event log.
+
+        Args:
+            pos: The position of the mouse event.
+            event: The type of event: &#39;click&#39;, &#39;release&#39;
+            button: The mouse button used for the event.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+
+        patch_pos = self._convert_canvas_to_patch_pos(pos)
+
+        patch_shape = self.\
+            _image.patches[self._current_patch_index].patch.shape
+
+        if patch_pos[0] &lt; 0 or patch_pos[0] &gt; patch_shape[0]:
+            return
+
+        if patch_pos[1] &lt; 0 or patch_pos[1] &gt; patch_shape[1]:
+            return
+
+        image_pos = self._convert_patch_to_image_pos(patch_pos)
+
+        patch_grid_coord = self.\
+            _image.patches[self._current_patch_index].patch_index
+
+        if event == &#34;release&#34;:
+
+            self._event_logger.log_event(&#34;mouse_up&#34;, patch_grid_coord,
+                                         patch_coord=patch_pos,
+                                         image_coord=image_pos,
+                                         mouse_button=button)
+        elif event == &#34;click&#34;:
+            self._event_logger.log_event(&#34;mouse_down&#34;, patch_grid_coord,
+                                         patch_coord=patch_pos,
+                                         image_coord=image_pos,
+                                         mouse_button=button)
+
+    def log_zoom_event(self, zoom_factor):
+        &#34;&#34;&#34;
+        Add a zoom event to the event log.
+
+        Args:
+            zoom_factor: The new zoom factor.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+
+        patch_grid_coord = self.\
+            _image.patches[self._current_patch_index].patch_index
+
+        self._event_logger.log_event(&#34;zoom_factor_change&#34;, patch_grid_coord,
+                                     new_zoom_factor=zoom_factor)
+
+    def log_drag_event(self, drag_type, start, end):
+        &#34;&#34;&#34;
+        Add a mouse drag event to the event log.
+
+        Args:
+            drag_type: The type of drag: &#39;brush&#39;, &#39;pan&#39;.
+            start: The starting position of the drag.
+            end: The end position of the drag.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+
+        patch_grid_coord = self.\
+            _image.patches[self._current_patch_index].patch_index
+
+        start = self._convert_canvas_to_patch_pos(start)
+        end = self._convert_canvas_to_patch_pos(end)
+
+        image_start = self._convert_patch_to_image_pos(start)
+        image_end = self._convert_patch_to_image_pos(end)
+
+        self._event_logger.log_event(&#34;drag&#34;, patch_grid_coord,
+                                     patch_start=start, patch_end=end,
+                                     image_start=image_start,
+                                     image_end=image_end,
+                                     drag_type=drag_type)
+
+    # ===================================================
+    # Private Functions
+    # ===================================================
+
+    def _ask_save_dir(self):
+        &#34;&#34;&#34;
+        Ask the user for a directory to save files in.
+
+
+        Returns:
+            None
+
+        Postconditions:
+            A file selection dialog will be presented.
+        &#34;&#34;&#34;
+
+        # Get the chosen directory
+        if self._last_save_dir is None:
+            initial_dir = os.path.expanduser(&#34;~&#34;)
+        else:
+            initial_dir = self._last_save_dir
+
+        dir_path = tkinter.filedialog.askdirectory(initialdir=initial_dir,
+                                                   title=&#34;Choose Output&#34;
+                                                   &#34; Directory&#34;)
+        if dir_path is None:
+            self._ask_save_dir()
+
+        self._last_save_dir = dir_path
+
+        self._autosave_dir = dir_path
+
+        # Get annotation group id
+
+        # For our purposes, the folder structure is:
+        # annoations-xxx-xx/annoations
+        folder = os.path.split(dir_path)[0]
+        folder = os.path.split(folder)[-1]
+
+        pattern = re.compile(&#34;^annotations-[0-9][0-9][0-9]-[0-9]+&#34;)
+
+        if pattern.match(folder):
+            log_name = folder + &#34;.log&#34;
+
+        else:
+            log_name = &#39;events.log&#39;
+
+        log_name = os.path.join(self._autosave_dir, log_name)
+
+        fh = logging.FileHandler(log_name)
+        fh.setLevel(logging.INFO)
+
+        event_format = &#39;%(message)s&#39;
+        event_formatter = logging.Formatter(event_format)
+        fh.setFormatter(event_formatter)
+
+        self._event_logger.add_handler(fh)
+
+    def _convert_canvas_to_patch_pos(self, pos):
+        &#34;&#34;&#34;
+        Convert the givent canvas coordinate to a patch-relative coordinate.
+
+        Args:
+            pos: The position to convert.
+
+        Returns:
+            The coordinate converted to a patch-releative coordinate.
+        &#34;&#34;&#34;
+
+        # Correct for offset in context image
+        pos = pos[0] - self._patch_offset[1], pos[1] - self._patch_offset[0]
+
+        # Need to invert the position, because tkinter coords are backward from
+        # skimage
+        pos = round(pos[1]-1), round(pos[0]-1)
+
+        return pos
+
+    def _convert_patch_to_image_pos(self, pos):
+        &#34;&#34;&#34;
+        Convert a patch coordinate to an image-relative coordinate.
+
+        Args:
+            pos: The patch position to convert.
+
+        Returns:
+            The coordinate relative to the whole image.
+        &#34;&#34;&#34;
+
+        # TODO: Fix private variable
+        block_size = self._image._block_size
+
+        patch_grid_coord = self.\
+            _image.patches[self._current_patch_index].patch_index
+
+        image_x = block_size[1] * (patch_grid_coord[1]) + pos[1]
+        image_y = block_size[0] * (patch_grid_coord[0]) + pos[0]
+
+        return image_y, image_x
+
+    def _init_tools(self):
+        &#34;&#34;&#34;
+        Create all the required tools.
+
+
+        Returns:
+            None
+
+        Postconditions:
+            self._image_tools will be created as a dictionary of id, tool pairs
+        &#34;&#34;&#34;
+
+        image_tools = {}
+
+        thresh_tool = ThresholdTool(self._undo_manager,
+                                    event_logger=self._event_logger)
+        image_tools[thresh_tool.id] = thresh_tool
+
+        self._default_tool = thresh_tool.id
+
+        add_reg_tool = AddRegionTool(self._undo_manager,
+                                     event_logger=self._event_logger)
+
+        add_reg_tool.bind_brush(self._brush_size_callback)
+
+        image_tools[add_reg_tool.id] = add_reg_tool
+
+        rem_reg_tool = RemoveRegionTool(self._undo_manager,
+                                        event_logger=self._event_logger)
+
+        rem_reg_tool.bind_brush(self._brush_size_callback)
+        image_tools[rem_reg_tool.id] = rem_reg_tool
+
+        flood_add_tool = FloodAddTool(self._undo_manager,
+                                      event_logger=self._event_logger)
+
+        image_tools[flood_add_tool.id] = flood_add_tool
+
+        flood_rem_tool = FloodRemoveTool(self._undo_manager,
+                                         event_logger=self._event_logger)
+
+        image_tools[flood_rem_tool.id] = flood_rem_tool
+
+        no_root_tool = NoRootTool(self._undo_manager,
+                                  self._next_patch_callback,
+                                  event_logger=self._event_logger)
+
+        image_tools[no_root_tool.id] = no_root_tool
+
+        prev_patch_tool = PreviousPatchTool(self._undo_manager,
+                                            self._prev_patch_callback,
+                                            event_logger=self._event_logger)
+
+        image_tools[prev_patch_tool.id] = prev_patch_tool
+
+        next_patch_tool = NextPatchTool(self._undo_manager,
+                                        self._next_patch_callback,
+                                        event_logger=self._event_logger)
+
+        image_tools[next_patch_tool.id] = next_patch_tool
+
+        undo_tool = UndoTool(self._undo_manager,
+                             self._undo_callback,
+                             event_logger=self._event_logger)
+
+        image_tools[undo_tool.id] = undo_tool
+        self._undo_id = undo_tool.id
+
+        redo_tool = RedoTool(self._undo_manager,
+                             self._redo_callback,
+                             event_logger=self._event_logger)
+
+        image_tools[redo_tool.id] = redo_tool
+        self._redo_id = redo_tool.id
+
+        for id in image_tools.keys():
+            image_tools[id].bind_to(self._display_current_patch)
+
+        self._image_tools = image_tools
+
+    def _next_patch_callback(self, patch, index):
+        &#34;&#34;&#34;
+        Called when the next patch is determined.
+
+        Args:
+            patch: The next patch.
+            index: The index in the patches list of the patch.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        self._logger.debug(&#34;Next patch {}.&#34;.format(index))
+
+        if patch is None or index == -1:
+            self._display_current_patch()
+
+            tkinter.messagebox.showinfo(&#34;No More Patches&#34;,
+                                        &#34;There are no patches left in the &#34;
+                                        &#34;image.  You can save the mask using &#34;
+                                        &#34;the file menu, or use the &#34;
+                                        &#34;preview window to review &#34;
+                                        &#34;your mask.&#34;)
+
+            self._display_current_patch()
+            return
+
+        cur_patch = self._image.patches[self._current_patch_index]
+        cur_patch.undo_history = copy.deepcopy(self._undo_manager)
+
+        self._context_img = None
+        self._current_patch_index = index
+
+        cur_patch = self._image.patches[self._current_patch_index]
+
+        if cur_patch.undo_history is None:
+            self._undo_manager = UndoManager()
+        else:
+            self._undo_manager = copy.deepcopy(cur_patch.undo_history)
+
+        for key in self._image_tools.keys():
+            self._image_tools[key].patch = patch
+            self._image_tools[key].undo_manager = self._undo_manager
+
+        self._display_current_patch(new=True)
+
+        if self._undo_manager.undo_empty:
+            self._main_window.disable_button(self._undo_id)
+        else:
+            self._main_window.enable_button(self._undo_id)
+
+        if self._undo_manager.redo_empty:
+            self._main_window.disable_button(self._redo_id)
+        else:
+            self._main_window.enable_button(self._redo_id)
+
+    def _prev_patch_callback(self, patch, index):
+        &#34;&#34;&#34;
+        Called when the previous patch is determined.
+
+        Args:
+            patch: The previous patch
+            index: The index of that patch in the list of patches.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+
+        if patch is None or index == -1:
+            return
+
+        cur_patch = self._image.patches[self._current_patch_index]
+        cur_patch.undo_history = copy.deepcopy(self._undo_manager)
+
+        self._context_img = None
+        self._current_patch_index = index
+
+        cur_patch = self._image.patches[self._current_patch_index]
+
+        if cur_patch.undo_history is None:
+            self._undo_manager = UndoManager()
+        else:
+            self._undo_manager = copy.deepcopy(cur_patch.undo_history)
+
+        for key in self._image_tools.keys():
+            self._image_tools[key].patch = patch
+            self._image_tools[key].undo_manager = self._undo_manager
+
+        self._display_current_patch(new=True)
+
+        self._main_window.disable_button(self._undo_id)
+        self._main_window.disable_button(self._redo_id)
+
+    def _undo_callback(self, patch, string):
+        &#34;&#34;&#34;
+        Called when undo is done.
+
+        Args:
+            patch: The patch returned from the undo stack.
+            string: The string for that patch.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        if patch is None:
+            return
+
+        current_patch = self._image.patches[self._current_patch_index]
+
+        self._undo_manager.add_to_redo_stack(copy.deepcopy(current_patch),
+                                             string)
+
+        self._main_window.enable_button(self._redo_id)
+
+        if self._undo_manager.undo_empty:
+            self._main_window.disable_button(self._undo_id)
+
+        self._image.patches[self._current_patch_index] = patch
+
+        for key in self._image_tools.keys():
+            self._image_tools[key].lock_undos()
+            self._image_tools[key].patch = patch
+
+    def _redo_callback(self, patch, string):
+        &#34;&#34;&#34;
+        Called when redo is done.
+
+        Args:
+            patch: The patch returned from the redo stack.
+            string: The string for that patch.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        if patch is None:
+            return
+
+        current_patch = self._image.patches[self._current_patch_index]
+
+        self._undo_manager.add_to_undo_stack(copy.deepcopy(current_patch),
+                                             string)
+
+        if self._undo_manager.redo_empty:
+            self._main_window.disable_button(self._redo_id)
+
+        self._main_window.enable_button(self._undo_id)
+
+        self._image.patches[self._current_patch_index] = patch
+
+        for key in self._image_tools.keys():
+            self._image_tools[key].lock_undos()
+            self._image_tools[key].patch = patch
+
+    def _display_current_patch(self, new=False):
+        &#34;&#34;&#34;
+        Display the current patch.
+
+
+        Returns:
+            None
+
+        Postconditions:
+            The main window&#39;s canvas will display the given image.
+        &#34;&#34;&#34;
+        if self._image is None:
+            self._logger.debug(&#34;No Image to Display!&#34;)
+            return
+
+        patch = self._image.patches[self._current_patch_index]
+        img = self._get_context_patches(patch)
+
+        self._main_window.show_image(img, new=new,
+                                     patch_offset=self._patch_offset)
+
+        if self._current_tool is not None:
+            self._current_tool.unlock_undos()
+        if self._undo_manager.undo_empty:
+            self._main_window.disable_button(self._undo_id)
+        else:
+            self._main_window.enable_button(self._undo_id)
+
+    def _brush_size_callback(self, radius):
+        &#34;&#34;&#34;
+        Called when a brush tool is updated.
+
+        Args:
+            radius: The new brush radius.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        self._main_window.set_canvas_brush_size(radius)
+
+    def _get_context_patches(self, patch):
+        &#34;&#34;&#34;
+        Get the patches immediately surrounding the current patch and place
+        them in a larger image.
+
+        Args:
+            patch: The current patch
+
+        Returns:
+            An image for display.
+        &#34;&#34;&#34;
+
+        # Find the neighbouring patches
+        index = patch.patch_index
+
+        if self._context_img is not None:
+            patch = self._image.patches[self._current_patch_index]
+            r_start = self._patch_offset[0]
+            r_end = r_start + patch.overlay_image.shape[0]
+            c_start = self._patch_offset[1]
+            c_end = c_start + patch.overlay_image.shape[1]
+
+            o_img = patch.overlay_image
+            o_img = np.dstack((o_img, np.full(o_img.shape[0:-1],
+                               255, dtype=o_img.dtype)))
+
+            self._context_img[r_start:r_end, c_start:c_end] = o_img
+            return self._context_img
+
+        neighbouring_indices = []
+
+        start_i = index[0] - 1
+        start_j = index[1] - 1
+
+        num_rows = 0
+        num_cols = 0
+
+        for i in range(start_i, start_i + 3):
+
+            if i &lt; 0 or i &gt;= self._image.num_patches:
+                continue
+            for j in range(start_j, start_j + 3):
+                if j &lt; 0 or j &gt;= self._image.num_patches:
+                    continue
+
+                neighbouring_indices.append((i, j))
+
+                if num_rows == 0:
+                    num_cols += 1
+            num_rows += 1
+
+        neighbouring_patches = []
+        drawable_patch_index = None  # Index of our patch in this list
+
+        # TODO: This could be more efficient I&#39;m sure
+        for i in neighbouring_indices:
+            for patch in self._image.patches:
+                if patch.patch_index == i:
+                    o_img = patch.overlay_image
+
+                    if i == index:
+                        o_img = np.dstack((o_img, np.full(o_img.shape[0:-1],
+                                           255,
+                                           dtype=o_img.dtype)))
+                        drawable_patch_index = neighbouring_indices.index(i)
+                    else:
+                        o_img = np.dstack((o_img, np.full(o_img.shape[0:-1],
+                                           self.CONTEXT_TRANSPARENCY,
+                                           dtype=o_img.dtype)))
+
+                    neighbouring_patches.append(o_img)
+
+        # Layer them into a numpy array
+        img_shape = (patch.overlay_image.shape[0] * num_rows,
+                     patch.overlay_image.shape[1] * num_cols, 4)
+        img = np.zeros(img_shape, dtype=np.ubyte)
+
+        col_num = 0
+        row_num = 0
+
+        i = 0
+        for patch in neighbouring_patches:
+            r, c = row_num, col_num
+            r = r * patch.shape[0]
+            c = c * patch.shape[1]
+            img[r:r+patch.shape[0],
+                c:c+patch.shape[1]] += patch
+            if i == drawable_patch_index:
+                self._patch_offset = (r, c)
+
+            col_num += 1
+
+            if col_num == num_cols:
+                col_num = 0
+                row_num += 1
+
+            i += 1
+
+        self._context_img = img
+        return img
+
+    def _update_progressbar(self):
+        &#34;&#34;&#34;
+        Update the progressbar popup
+
+
+        Returns:
+            None
+
+        Postconditions:
+            The progressbar will be incremented.
+        &#34;&#34;&#34;
+        self._main_window.progress_popup.update()
+        self._main_window.load_progress += self._main_window.progress_step
+        self._main_window.load_progress_var\
+            .set(self._main_window.load_progress)
+
+        if self._main_window.load_progress &gt;= self.NUM_PATCHES ** 2:
+            self._main_window.progress_popup.destroy()
+
+    def show_saved_preview(self):
+        &#34;&#34;&#34;
+        Display a preview of the saved mask overlaid with the image.
+
+
+        Returns:
+            None
+
+        Postconditions:
+            A window displaying the image and mask is shown.
+        &#34;&#34;&#34;
+
+        overlay = self._image.create_overlay_img()
+
+        PreviewWindow(overlay, self, self._main_window.style)
+
+    def get_image_preview(self):
+        &#34;&#34;&#34;
+        Get a preview of the image mask.
+
+
+        Returns:
+            An image representing the preview of the mask.
+        &#34;&#34;&#34;
+
+        img = self._image.create_overlay_img()
+
+        patch_size_x = self\
+            ._image.patches[self._current_patch_index].patch.shape[0]
+
+        patch_size_y = self\
+            ._image.patches[self._current_patch_index].patch.shape[1]
+
+        # Draw patch grid
+        if self._grid_img is None:
+            self._grid_img = np.zeros(img.shape, dtype=np.bool)
+
+            for i in range(self.NUM_PATCHES):
+                for j in range(self.NUM_PATCHES):
+                    start_x = i * patch_size_x
+                    stop_x = start_x + patch_size_x
+
+                    start_y = j * patch_size_y
+                    stop_y = start_y + patch_size_y
+
+                    rec_start = (start_x, start_y)
+                    rec_end = (stop_x, stop_y)
+
+                    rr, cc = rectangle_perimeter(rec_start, end=rec_end,
+                                                 shape=self._grid_img.shape)
+
+                    self._grid_img[rr, cc] = True
+
+        img[self._grid_img] = 207
+
+        # Draw current Patch
+        start_x = self._image\
+            .patches[self._current_patch_index].patch_index[0] * patch_size_x
+
+        stop_x = start_x + patch_size_x
+
+        start_y = self\
+            ._image.patches[self._current_patch_index]\
+            .patch_index[1] * patch_size_y
+
+        stop_y = start_y + patch_size_y
+
+        rec_start = (start_x, start_y)
+        rec_end = (stop_x, stop_y)
+
+        rr, cc = rectangle_perimeter(rec_start, end=rec_end,
+                                     shape=self._image.image.shape)
+
+        img[rr, cc] = [255, 255, 0]
+
+        for i in range(4):
+            rec_start = (rec_start[0] + 1, rec_start[1] + 1)
+            rec_end = (rec_end[0] - 1, rec_end[1] - 1)
+
+            rr, cc = rectangle_perimeter(rec_start, end=rec_end,
+                                         shape=self._image.image.shape)
+
+            img[rr, cc] = [255, 255, 0]
+
+        return img
+
+    def _get_image_name_from_path(self, path):
+        &#34;&#34;&#34;
+        Get the name of the image from its original path.
+
+        Args:
+            path: The path to the original image.
+
+        Returns:
+            The name to save the image mask as.
+        &#34;&#34;&#34;
+        if os.path.isdir(path):
+            raise ValueError(&#34;Cannot get image name from a directory.&#34;)
+
+        basename = os.path.basename(path)
+
+        return os.path.splitext(basename)[0] + &#39;_mask.png&#39;</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="friendly_ground_truth.controller.controller.Controller"><code class="flex name class">
+<span>class <span class="ident">Controller</span></span>
+<span>(</span><span>root)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Main controller for the application.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>image_tools</code></strong></dt>
+<dd>A dictionary of tools keyed by their id</dd>
+</dl>
+<p>Create a Controller object</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>root</code></strong></dt>
+<dd>The tk Root</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>A controller object</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="postconditions">Postconditions</h2>
+<p>The main application window is started</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Controller():
+    &#34;&#34;&#34;
+    Main controller for the application.
+
+    Attributes:
+        image_tools: A dictionary of tools keyed by their id
+    &#34;&#34;&#34;
+    CONTEXT_TRANSPARENCY = 100
+    NUM_PATCHES = 10
+
+    DEFAULT_PREFS = {&#39;theme&#39;: &#39;Light&#39;}
+
+    def __init__(self, root):
+        &#34;&#34;&#34;
+        Create a Controller object
+
+        Args:
+            root: The tk Root
+
+        Returns:
+            A controller object
+
+        Postconditions:
+            The main application window is started
+        &#34;&#34;&#34;
+        # ------------------------------------
+        # Private Attributes
+        # -----------------------------------
+
+        self.PREFERENCES_PATH = self.get_preferences_path()
+        self._grid_img = None
+        # The root tkinter object
+        self._root = root
+        # For logging
+        self._logger = logging.getLogger(&#39;friendly_gt.controller.&#39;
+                                         &#39;controller.Controller&#39;)
+
+        self._event_logger = EventLogger()
+
+        # The last directory used to load an image
+        self._last_load_dir = None
+        # The last directory used to save an image
+        self._last_save_dir = None
+
+        self._autosave_dir = None
+
+        # Image containing neighbouring patches
+        self._context_img = None
+
+        # For managing undo operations
+        self._undo_manager = UndoManager()
+        # A dictionary of image tools
+        self._image_tools = {}
+        self._init_tools()
+
+        # Initialize the main window
+        self._main_window = MainWindow(self._root, self)
+
+        # The path to the current image
+        self._image_path = None
+
+        # The current image
+        self._image = None
+
+        # The index of the current patch in _image.patches
+        self._current_patch_index = 0
+
+        # Whether the mask has been saved
+        self._mask_saved = False
+
+        # The current tool in use
+        self._current_tool = None
+
+        # The offset of the current patch within the context image
+        self._patch_offset = (0, 0)
+
+        # Whether the mask preview has been shown or not
+        self._previewed = False
+
+        # Disable the redo button for now
+        self._main_window.disable_button(self._redo_id)
+        self._main_window.disable_button(self._undo_id)
+
+        self._ask_save_dir()
+
+    @property
+    def image_tools(self):
+        &#34;&#34;&#34;
+        A dictionary of available tools for annotating the image with.
+        &#34;&#34;&#34;
+        return self._image_tools
+
+    # ===================================================
+    # PUBLIC FUNCTIONS
+    # ===================================================
+    def get_preferences_path(self):
+        &#34;&#34;&#34;
+        Return the path to the preferences file.
+
+
+        Returns:
+            The path to the preferences file.
+        &#34;&#34;&#34;
+        if platform != &#39;win32&#39;:
+
+            home = os.path.expanduser(&#34;~&#34;)
+            data_dir = os.path.join(home, &#34;.friendly_ground_truth/&#34;)
+
+            if not os.path.exists(data_dir):
+                os.mkdir(data_dir)
+
+            preferences_path = os.path.join(data_dir,
+                                            &#34;user_preferences.json&#34;)
+
+        else:
+            preferences_path = &#34;./user_preferences.json&#34;
+
+        return preferences_path
+
+    def load_existing_mask(self):
+        &#34;&#34;&#34;
+        Load in an existing annotation mask.
+
+
+        Returns:
+            False if the the mask cannot be loaded.
+        &#34;&#34;&#34;
+        if self._image is None:
+            tkinter.messagebox.showinfo(&#34;No Image Loaded&#34;,
+                                        &#34;You must load an image before &#34;
+                                        &#34; loading an existing mask!&#34;)
+
+            return False
+
+        self._context_img = None
+        self._grid_img = None
+
+        filetypes = [(&#34;PNG Files&#34;, &#34;*.png&#34;), (&#34;JPEG Files&#34;, &#34;*.jpg&#34;)]
+
+        if self._last_load_dir is None:
+            initial_dir = os.path.expanduser(&#34;~&#34;)
+        else:
+            initial_dir = self._last_load_dir
+
+        file_name = tkinter.filedialog.askopenfilename(filetypes=filetypes,
+                                                       initialdir=initial_dir)
+
+        self._logger.debug(&#34;Selected mask: {}&#34;.format(file_name))
+        # Make sure the names are similar
+        mask_filename = os.path.split(file_name)[-1]
+
+        image_filename = \
+            os.path.splitext(os.path.split(self._image_path)[-1])[0]
+
+        if image_filename not in mask_filename:
+            tkinter.messagebox.showinfo(&#34;Invalid Mask&#34;,
+                                        &#34;The name of the mask you have chosen&#34;
+                                        &#34; does not match the name of the &#34;
+                                        &#34;loaded image.&#34;)
+
+            return False
+
+        if file_name is None or file_name == ():
+            return False
+
+        try:
+            self._main_window.start_progressbar(self.NUM_PATCHES ** 2)
+
+
+            self._image.load_mask(file_name)
+
+        except FileNotFoundError:
+            self._logger.exception(&#34;There was a problem loading the image.&#34;)
+            return False
+
+        image_shape = self._image.image.shape
+        patch_grid_shape = self._image.patches[0].patch.shape
+
+        self._event_logger.log_load_mask(image_filename, image_shape[1],
+                                         image_shape[0], patch_grid_shape[1],
+                                         patch_grid_shape[0])
+
+        self._current_patch_index = 0
+
+        self._logger.debug(&#34;Displaying patch.&#34;)
+        self._display_current_patch(new=True)
+
+        self.activate_tool(self._default_tool)
+        self._main_window.set_default_tool(self._default_tool)
+
+    def load_new_image(self):
+        &#34;&#34;&#34;
+        Load a new image with a file dialog.
+
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+
+        self._context_img = None
+        self._grid_img = None
+        self._event_logger.active_tool = &#34;None&#34;
+
+        filetypes = [(&#34;TIF Files&#34;, &#34;*.tif&#34;), (&#34;TIFF Files&#34;, &#34;*.tiff&#34;),
+                     (&#34;PNG Files&#34;, &#34;*.png&#34;), (&#34;JPEG Files&#34;, &#34;*.jpg&#34;)]
+
+        if self._last_load_dir is None:
+            initial_dir = os.path.expanduser(&#34;~&#34;)
+        else:
+            initial_dir = self._last_load_dir
+
+        file_name = tkinter.filedialog.askopenfilename(filetypes=filetypes,
+                                                       initialdir=initial_dir)
+
+        if file_name is None or file_name == ():
+            return
+
+        self._last_load_dir = os.path.split(file_name)[0]
+
+        self._image_path = file_name
+
+        try:
+            self._main_window.start_progressbar(self.NUM_PATCHES ** 2)
+
+            del self._image
+            self._image = Image(file_name, 10, self._update_progressbar)
+
+        except FileNotFoundError:
+            self._logger.exception(&#34;There was a problem loading the image.&#34;)
+            return
+
+        image_filename = os.path.split(file_name)[-1]
+        image_shape = self._image.image.shape
+        patch_grid_shape = self._image.patches[0].patch.shape
+
+        self._event_logger.log_load_image(image_filename, image_shape[1],
+                                          image_shape[0], patch_grid_shape[1],
+                                          patch_grid_shape[0])
+
+        self._current_patch_index = 0
+
+        self._display_current_patch(new=True)
+        self._main_window.update_image_indicator(self._image_path)
+
+        self.activate_tool(self._default_tool)
+        self._main_window.set_default_tool(self._default_tool)
+
+    def save_mask(self):
+        &#34;&#34;&#34;
+        Save the finished image mask.
+
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+
+        if self._image is None:
+            return
+
+        self._mask_saved = True
+
+        if self._last_save_dir is None:
+            initial_dir = os.path.expanduser(&#34;~&#34;)
+        else:
+            initial_dir = self._last_save_dir
+
+        dir_path = tkinter.filedialog.askdirectory(initialdir=initial_dir)
+
+        if dir_path is None:
+            return
+
+        self._last_save_dir = dir_path
+
+        image_name = self._get_image_name_from_path(self._image_path)
+        # labels_name = self._get_landmark_name_from_path(self._image_path)
+
+        mask_pathname = os.path.join(dir_path, image_name)
+        # label_pathname = os.path.join(dir_path, labels_name)
+
+        try:
+            self._image.export_mask(mask_pathname)
+            # self._image.export_labels(label_pathname)
+
+            tkinter.messagebox.showinfo(&#34;Image Mask Saved!&#34;,
+                                        &#34;Image Mask Saved!&#34;)
+        except IOError:
+            self._logger.error(&#34;Could not save file!&#34;)
+
+        self._previewed = False
+
+    def set_preferences(self, preferences):
+        &#34;&#34;&#34;
+        Set the current preferences for the application.
+
+        Args:
+            preferences: A dictionary of preferences and their values.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        theme = preferences[&#39;theme&#39;]
+
+        self._main_window.set_theme(theme)
+
+    def load_preferences(self):
+        &#34;&#34;&#34;
+        Load the preferences saved in the preferences file.
+
+
+        Returns:
+            A dictionary containing the user&#39;s preferences.
+        &#34;&#34;&#34;
+        if not os.path.exists(self.PREFERENCES_PATH):
+            return self.DEFAULT_PREFS
+
+        with open(self.PREFERENCES_PATH, &#39;r&#39;) as fin:
+            preferences = json.load(fin)
+
+        return preferences
+
+    def save_preferences(self, preferences):
+        &#34;&#34;&#34;
+        Save the user preferences.
+
+        Args:
+            preferences: A dictionary containing the user preferences.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+
+        with open(self.PREFERENCES_PATH, &#39;w&#39;) as fout:
+            json.dump(preferences, fout)
+
+    def activate_tool(self, id):
+        &#34;&#34;&#34;
+        Activate the given tool id.
+
+        Args:
+            id: The id of the tool.
+
+        Returns:
+            None
+
+        Postcondition:
+            The current tool is set to the tool matching the id
+            Any activation functionality of the tool is performed.
+        &#34;&#34;&#34;
+        if self._image is None:
+            return
+
+        tool = self.image_tools[id]
+        tool.image = self._image
+        tool.patch = self._image.patches[self._current_patch_index]
+
+        old_tool = None
+
+        if not tool.persistant:
+            old_tool = self._current_tool
+        else:
+            self._event_logger.active_tool = tool.name
+
+        self._current_tool = tool
+
+        tool.on_activate(self._current_patch_index)
+
+        if old_tool is not None:
+            self._current_tool = old_tool
+            tool = old_tool
+
+        tool.lock_undos()
+        # self._display_current_patch()
+        self._main_window.update_info_panel(tool)
+        self._main_window.set_canvas_cursor(tool.cursor)
+        tool.unlock_undos()
+
+        if not self._undo_manager.undo_empty:
+            self._main_window.enable_button(self._undo_id)
+
+    def adjust_tool(self, direction):
+        &#34;&#34;&#34;
+        Adjust the current tool.
+
+        Args:
+            direction: An integer, positive is up, negative is down.
+
+        Returns:
+            None
+
+        Postconditions:
+            The current tool&#39;s adjust tool function is called.
+        &#34;&#34;&#34;
+        self._current_tool.on_adjust(direction)
+        # self._display_current_patch()
+
+        if not self._undo_manager.undo_empty:
+            self._main_window.enable_button(self._undo_id)
+
+    def click_event(self, pos):
+        &#34;&#34;&#34;
+        A click event in the main window has occured.
+
+        Args:
+            pos: The position of the event.
+
+        Returns:
+            None
+
+        Postconditions:
+            The current tool&#39;s on_click() function is called.
+        &#34;&#34;&#34;
+        # Correct for offset in context image
+        pos = pos[0] - self._patch_offset[1], pos[1] - self._patch_offset[0]
+
+        # Need to invert the position, because tkinter coords are backward from
+        # skimage
+        pos = round(pos[1]-1), round(pos[0]-1)
+
+        self._logger.debug(&#34;Click Event: {}&#34;.format(pos))
+
+        if self._current_tool is not None:
+            self._current_tool.on_click(pos)
+
+        if not self._undo_manager.undo_empty:
+            self._main_window.enable_button(self._undo_id)
+
+    def drag_event(self, pos, drag_id=None):
+        &#34;&#34;&#34;
+        A click event in the main window has occured.
+
+        Args:
+            pos: The position of the event.
+            drag_id: Unique identifier for the drag event.
+
+        Returns:
+            None
+
+        Postconditions:
+            The current tool&#39;s on_drag() function is called.
+        &#34;&#34;&#34;
+        # Correct for offset in context image
+        pos = pos[0] - self._patch_offset[1], pos[1] - self._patch_offset[0]
+
+        # Need to invert the position, because tkinter coords are backward from
+        # skimage
+        pos = round(pos[1]-1), round(pos[0]-1)
+
+        self._current_tool.on_drag(pos, drag_id=drag_id)
+
+        if not self._undo_manager.undo_empty:
+            self._main_window.enable_button(self._undo_id)
+
+    def navigate_to_patch(self, pos):
+        &#34;&#34;&#34;
+        Navigate to the patch containing the given coordinates in the original
+        image.
+
+        Args:
+            pos: The position in the image to go to.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+
+        pos = (pos[1], pos[0])
+
+        patch_index = self._image.get_patch_from_coords(pos)
+
+        patch = self._image.patches[patch_index]
+
+        self._next_patch_callback(patch, patch_index)
+
+    def log_mouse_event(self, pos, event, button):
+        &#34;&#34;&#34;
+        Add a mouse event to the event log.
+
+        Args:
+            pos: The position of the mouse event.
+            event: The type of event: &#39;click&#39;, &#39;release&#39;
+            button: The mouse button used for the event.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+
+        patch_pos = self._convert_canvas_to_patch_pos(pos)
+
+        patch_shape = self.\
+            _image.patches[self._current_patch_index].patch.shape
+
+        if patch_pos[0] &lt; 0 or patch_pos[0] &gt; patch_shape[0]:
+            return
+
+        if patch_pos[1] &lt; 0 or patch_pos[1] &gt; patch_shape[1]:
+            return
+
+        image_pos = self._convert_patch_to_image_pos(patch_pos)
+
+        patch_grid_coord = self.\
+            _image.patches[self._current_patch_index].patch_index
+
+        if event == &#34;release&#34;:
+
+            self._event_logger.log_event(&#34;mouse_up&#34;, patch_grid_coord,
+                                         patch_coord=patch_pos,
+                                         image_coord=image_pos,
+                                         mouse_button=button)
+        elif event == &#34;click&#34;:
+            self._event_logger.log_event(&#34;mouse_down&#34;, patch_grid_coord,
+                                         patch_coord=patch_pos,
+                                         image_coord=image_pos,
+                                         mouse_button=button)
+
+    def log_zoom_event(self, zoom_factor):
+        &#34;&#34;&#34;
+        Add a zoom event to the event log.
+
+        Args:
+            zoom_factor: The new zoom factor.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+
+        patch_grid_coord = self.\
+            _image.patches[self._current_patch_index].patch_index
+
+        self._event_logger.log_event(&#34;zoom_factor_change&#34;, patch_grid_coord,
+                                     new_zoom_factor=zoom_factor)
+
+    def log_drag_event(self, drag_type, start, end):
+        &#34;&#34;&#34;
+        Add a mouse drag event to the event log.
+
+        Args:
+            drag_type: The type of drag: &#39;brush&#39;, &#39;pan&#39;.
+            start: The starting position of the drag.
+            end: The end position of the drag.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+
+        patch_grid_coord = self.\
+            _image.patches[self._current_patch_index].patch_index
+
+        start = self._convert_canvas_to_patch_pos(start)
+        end = self._convert_canvas_to_patch_pos(end)
+
+        image_start = self._convert_patch_to_image_pos(start)
+        image_end = self._convert_patch_to_image_pos(end)
+
+        self._event_logger.log_event(&#34;drag&#34;, patch_grid_coord,
+                                     patch_start=start, patch_end=end,
+                                     image_start=image_start,
+                                     image_end=image_end,
+                                     drag_type=drag_type)
+
+    # ===================================================
+    # Private Functions
+    # ===================================================
+
+    def _ask_save_dir(self):
+        &#34;&#34;&#34;
+        Ask the user for a directory to save files in.
+
+
+        Returns:
+            None
+
+        Postconditions:
+            A file selection dialog will be presented.
+        &#34;&#34;&#34;
+
+        # Get the chosen directory
+        if self._last_save_dir is None:
+            initial_dir = os.path.expanduser(&#34;~&#34;)
+        else:
+            initial_dir = self._last_save_dir
+
+        dir_path = tkinter.filedialog.askdirectory(initialdir=initial_dir,
+                                                   title=&#34;Choose Output&#34;
+                                                   &#34; Directory&#34;)
+        if dir_path is None:
+            self._ask_save_dir()
+
+        self._last_save_dir = dir_path
+
+        self._autosave_dir = dir_path
+
+        # Get annotation group id
+
+        # For our purposes, the folder structure is:
+        # annoations-xxx-xx/annoations
+        folder = os.path.split(dir_path)[0]
+        folder = os.path.split(folder)[-1]
+
+        pattern = re.compile(&#34;^annotations-[0-9][0-9][0-9]-[0-9]+&#34;)
+
+        if pattern.match(folder):
+            log_name = folder + &#34;.log&#34;
+
+        else:
+            log_name = &#39;events.log&#39;
+
+        log_name = os.path.join(self._autosave_dir, log_name)
+
+        fh = logging.FileHandler(log_name)
+        fh.setLevel(logging.INFO)
+
+        event_format = &#39;%(message)s&#39;
+        event_formatter = logging.Formatter(event_format)
+        fh.setFormatter(event_formatter)
+
+        self._event_logger.add_handler(fh)
+
+    def _convert_canvas_to_patch_pos(self, pos):
+        &#34;&#34;&#34;
+        Convert the givent canvas coordinate to a patch-relative coordinate.
+
+        Args:
+            pos: The position to convert.
+
+        Returns:
+            The coordinate converted to a patch-releative coordinate.
+        &#34;&#34;&#34;
+
+        # Correct for offset in context image
+        pos = pos[0] - self._patch_offset[1], pos[1] - self._patch_offset[0]
+
+        # Need to invert the position, because tkinter coords are backward from
+        # skimage
+        pos = round(pos[1]-1), round(pos[0]-1)
+
+        return pos
+
+    def _convert_patch_to_image_pos(self, pos):
+        &#34;&#34;&#34;
+        Convert a patch coordinate to an image-relative coordinate.
+
+        Args:
+            pos: The patch position to convert.
+
+        Returns:
+            The coordinate relative to the whole image.
+        &#34;&#34;&#34;
+
+        # TODO: Fix private variable
+        block_size = self._image._block_size
+
+        patch_grid_coord = self.\
+            _image.patches[self._current_patch_index].patch_index
+
+        image_x = block_size[1] * (patch_grid_coord[1]) + pos[1]
+        image_y = block_size[0] * (patch_grid_coord[0]) + pos[0]
+
+        return image_y, image_x
+
+    def _init_tools(self):
+        &#34;&#34;&#34;
+        Create all the required tools.
+
+
+        Returns:
+            None
+
+        Postconditions:
+            self._image_tools will be created as a dictionary of id, tool pairs
+        &#34;&#34;&#34;
+
+        image_tools = {}
+
+        thresh_tool = ThresholdTool(self._undo_manager,
+                                    event_logger=self._event_logger)
+        image_tools[thresh_tool.id] = thresh_tool
+
+        self._default_tool = thresh_tool.id
+
+        add_reg_tool = AddRegionTool(self._undo_manager,
+                                     event_logger=self._event_logger)
+
+        add_reg_tool.bind_brush(self._brush_size_callback)
+
+        image_tools[add_reg_tool.id] = add_reg_tool
+
+        rem_reg_tool = RemoveRegionTool(self._undo_manager,
+                                        event_logger=self._event_logger)
+
+        rem_reg_tool.bind_brush(self._brush_size_callback)
+        image_tools[rem_reg_tool.id] = rem_reg_tool
+
+        flood_add_tool = FloodAddTool(self._undo_manager,
+                                      event_logger=self._event_logger)
+
+        image_tools[flood_add_tool.id] = flood_add_tool
+
+        flood_rem_tool = FloodRemoveTool(self._undo_manager,
+                                         event_logger=self._event_logger)
+
+        image_tools[flood_rem_tool.id] = flood_rem_tool
+
+        no_root_tool = NoRootTool(self._undo_manager,
+                                  self._next_patch_callback,
+                                  event_logger=self._event_logger)
+
+        image_tools[no_root_tool.id] = no_root_tool
+
+        prev_patch_tool = PreviousPatchTool(self._undo_manager,
+                                            self._prev_patch_callback,
+                                            event_logger=self._event_logger)
+
+        image_tools[prev_patch_tool.id] = prev_patch_tool
+
+        next_patch_tool = NextPatchTool(self._undo_manager,
+                                        self._next_patch_callback,
+                                        event_logger=self._event_logger)
+
+        image_tools[next_patch_tool.id] = next_patch_tool
+
+        undo_tool = UndoTool(self._undo_manager,
+                             self._undo_callback,
+                             event_logger=self._event_logger)
+
+        image_tools[undo_tool.id] = undo_tool
+        self._undo_id = undo_tool.id
+
+        redo_tool = RedoTool(self._undo_manager,
+                             self._redo_callback,
+                             event_logger=self._event_logger)
+
+        image_tools[redo_tool.id] = redo_tool
+        self._redo_id = redo_tool.id
+
+        for id in image_tools.keys():
+            image_tools[id].bind_to(self._display_current_patch)
+
+        self._image_tools = image_tools
+
+    def _next_patch_callback(self, patch, index):
+        &#34;&#34;&#34;
+        Called when the next patch is determined.
+
+        Args:
+            patch: The next patch.
+            index: The index in the patches list of the patch.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        self._logger.debug(&#34;Next patch {}.&#34;.format(index))
+
+        if patch is None or index == -1:
+            self._display_current_patch()
+
+            tkinter.messagebox.showinfo(&#34;No More Patches&#34;,
+                                        &#34;There are no patches left in the &#34;
+                                        &#34;image.  You can save the mask using &#34;
+                                        &#34;the file menu, or use the &#34;
+                                        &#34;preview window to review &#34;
+                                        &#34;your mask.&#34;)
+
+            self._display_current_patch()
+            return
+
+        cur_patch = self._image.patches[self._current_patch_index]
+        cur_patch.undo_history = copy.deepcopy(self._undo_manager)
+
+        self._context_img = None
+        self._current_patch_index = index
+
+        cur_patch = self._image.patches[self._current_patch_index]
+
+        if cur_patch.undo_history is None:
+            self._undo_manager = UndoManager()
+        else:
+            self._undo_manager = copy.deepcopy(cur_patch.undo_history)
+
+        for key in self._image_tools.keys():
+            self._image_tools[key].patch = patch
+            self._image_tools[key].undo_manager = self._undo_manager
+
+        self._display_current_patch(new=True)
+
+        if self._undo_manager.undo_empty:
+            self._main_window.disable_button(self._undo_id)
+        else:
+            self._main_window.enable_button(self._undo_id)
+
+        if self._undo_manager.redo_empty:
+            self._main_window.disable_button(self._redo_id)
+        else:
+            self._main_window.enable_button(self._redo_id)
+
+    def _prev_patch_callback(self, patch, index):
+        &#34;&#34;&#34;
+        Called when the previous patch is determined.
+
+        Args:
+            patch: The previous patch
+            index: The index of that patch in the list of patches.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+
+        if patch is None or index == -1:
+            return
+
+        cur_patch = self._image.patches[self._current_patch_index]
+        cur_patch.undo_history = copy.deepcopy(self._undo_manager)
+
+        self._context_img = None
+        self._current_patch_index = index
+
+        cur_patch = self._image.patches[self._current_patch_index]
+
+        if cur_patch.undo_history is None:
+            self._undo_manager = UndoManager()
+        else:
+            self._undo_manager = copy.deepcopy(cur_patch.undo_history)
+
+        for key in self._image_tools.keys():
+            self._image_tools[key].patch = patch
+            self._image_tools[key].undo_manager = self._undo_manager
+
+        self._display_current_patch(new=True)
+
+        self._main_window.disable_button(self._undo_id)
+        self._main_window.disable_button(self._redo_id)
+
+    def _undo_callback(self, patch, string):
+        &#34;&#34;&#34;
+        Called when undo is done.
+
+        Args:
+            patch: The patch returned from the undo stack.
+            string: The string for that patch.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        if patch is None:
+            return
+
+        current_patch = self._image.patches[self._current_patch_index]
+
+        self._undo_manager.add_to_redo_stack(copy.deepcopy(current_patch),
+                                             string)
+
+        self._main_window.enable_button(self._redo_id)
+
+        if self._undo_manager.undo_empty:
+            self._main_window.disable_button(self._undo_id)
+
+        self._image.patches[self._current_patch_index] = patch
+
+        for key in self._image_tools.keys():
+            self._image_tools[key].lock_undos()
+            self._image_tools[key].patch = patch
+
+    def _redo_callback(self, patch, string):
+        &#34;&#34;&#34;
+        Called when redo is done.
+
+        Args:
+            patch: The patch returned from the redo stack.
+            string: The string for that patch.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        if patch is None:
+            return
+
+        current_patch = self._image.patches[self._current_patch_index]
+
+        self._undo_manager.add_to_undo_stack(copy.deepcopy(current_patch),
+                                             string)
+
+        if self._undo_manager.redo_empty:
+            self._main_window.disable_button(self._redo_id)
+
+        self._main_window.enable_button(self._undo_id)
+
+        self._image.patches[self._current_patch_index] = patch
+
+        for key in self._image_tools.keys():
+            self._image_tools[key].lock_undos()
+            self._image_tools[key].patch = patch
+
+    def _display_current_patch(self, new=False):
+        &#34;&#34;&#34;
+        Display the current patch.
+
+
+        Returns:
+            None
+
+        Postconditions:
+            The main window&#39;s canvas will display the given image.
+        &#34;&#34;&#34;
+        if self._image is None:
+            self._logger.debug(&#34;No Image to Display!&#34;)
+            return
+
+        patch = self._image.patches[self._current_patch_index]
+        img = self._get_context_patches(patch)
+
+        self._main_window.show_image(img, new=new,
+                                     patch_offset=self._patch_offset)
+
+        if self._current_tool is not None:
+            self._current_tool.unlock_undos()
+        if self._undo_manager.undo_empty:
+            self._main_window.disable_button(self._undo_id)
+        else:
+            self._main_window.enable_button(self._undo_id)
+
+    def _brush_size_callback(self, radius):
+        &#34;&#34;&#34;
+        Called when a brush tool is updated.
+
+        Args:
+            radius: The new brush radius.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        self._main_window.set_canvas_brush_size(radius)
+
+    def _get_context_patches(self, patch):
+        &#34;&#34;&#34;
+        Get the patches immediately surrounding the current patch and place
+        them in a larger image.
+
+        Args:
+            patch: The current patch
+
+        Returns:
+            An image for display.
+        &#34;&#34;&#34;
+
+        # Find the neighbouring patches
+        index = patch.patch_index
+
+        if self._context_img is not None:
+            patch = self._image.patches[self._current_patch_index]
+            r_start = self._patch_offset[0]
+            r_end = r_start + patch.overlay_image.shape[0]
+            c_start = self._patch_offset[1]
+            c_end = c_start + patch.overlay_image.shape[1]
+
+            o_img = patch.overlay_image
+            o_img = np.dstack((o_img, np.full(o_img.shape[0:-1],
+                               255, dtype=o_img.dtype)))
+
+            self._context_img[r_start:r_end, c_start:c_end] = o_img
+            return self._context_img
+
+        neighbouring_indices = []
+
+        start_i = index[0] - 1
+        start_j = index[1] - 1
+
+        num_rows = 0
+        num_cols = 0
+
+        for i in range(start_i, start_i + 3):
+
+            if i &lt; 0 or i &gt;= self._image.num_patches:
+                continue
+            for j in range(start_j, start_j + 3):
+                if j &lt; 0 or j &gt;= self._image.num_patches:
+                    continue
+
+                neighbouring_indices.append((i, j))
+
+                if num_rows == 0:
+                    num_cols += 1
+            num_rows += 1
+
+        neighbouring_patches = []
+        drawable_patch_index = None  # Index of our patch in this list
+
+        # TODO: This could be more efficient I&#39;m sure
+        for i in neighbouring_indices:
+            for patch in self._image.patches:
+                if patch.patch_index == i:
+                    o_img = patch.overlay_image
+
+                    if i == index:
+                        o_img = np.dstack((o_img, np.full(o_img.shape[0:-1],
+                                           255,
+                                           dtype=o_img.dtype)))
+                        drawable_patch_index = neighbouring_indices.index(i)
+                    else:
+                        o_img = np.dstack((o_img, np.full(o_img.shape[0:-1],
+                                           self.CONTEXT_TRANSPARENCY,
+                                           dtype=o_img.dtype)))
+
+                    neighbouring_patches.append(o_img)
+
+        # Layer them into a numpy array
+        img_shape = (patch.overlay_image.shape[0] * num_rows,
+                     patch.overlay_image.shape[1] * num_cols, 4)
+        img = np.zeros(img_shape, dtype=np.ubyte)
+
+        col_num = 0
+        row_num = 0
+
+        i = 0
+        for patch in neighbouring_patches:
+            r, c = row_num, col_num
+            r = r * patch.shape[0]
+            c = c * patch.shape[1]
+            img[r:r+patch.shape[0],
+                c:c+patch.shape[1]] += patch
+            if i == drawable_patch_index:
+                self._patch_offset = (r, c)
+
+            col_num += 1
+
+            if col_num == num_cols:
+                col_num = 0
+                row_num += 1
+
+            i += 1
+
+        self._context_img = img
+        return img
+
+    def _update_progressbar(self):
+        &#34;&#34;&#34;
+        Update the progressbar popup
+
+
+        Returns:
+            None
+
+        Postconditions:
+            The progressbar will be incremented.
+        &#34;&#34;&#34;
+        self._main_window.progress_popup.update()
+        self._main_window.load_progress += self._main_window.progress_step
+        self._main_window.load_progress_var\
+            .set(self._main_window.load_progress)
+
+        if self._main_window.load_progress &gt;= self.NUM_PATCHES ** 2:
+            self._main_window.progress_popup.destroy()
+
+    def show_saved_preview(self):
+        &#34;&#34;&#34;
+        Display a preview of the saved mask overlaid with the image.
+
+
+        Returns:
+            None
+
+        Postconditions:
+            A window displaying the image and mask is shown.
+        &#34;&#34;&#34;
+
+        overlay = self._image.create_overlay_img()
+
+        PreviewWindow(overlay, self, self._main_window.style)
+
+    def get_image_preview(self):
+        &#34;&#34;&#34;
+        Get a preview of the image mask.
+
+
+        Returns:
+            An image representing the preview of the mask.
+        &#34;&#34;&#34;
+
+        img = self._image.create_overlay_img()
+
+        patch_size_x = self\
+            ._image.patches[self._current_patch_index].patch.shape[0]
+
+        patch_size_y = self\
+            ._image.patches[self._current_patch_index].patch.shape[1]
+
+        # Draw patch grid
+        if self._grid_img is None:
+            self._grid_img = np.zeros(img.shape, dtype=np.bool)
+
+            for i in range(self.NUM_PATCHES):
+                for j in range(self.NUM_PATCHES):
+                    start_x = i * patch_size_x
+                    stop_x = start_x + patch_size_x
+
+                    start_y = j * patch_size_y
+                    stop_y = start_y + patch_size_y
+
+                    rec_start = (start_x, start_y)
+                    rec_end = (stop_x, stop_y)
+
+                    rr, cc = rectangle_perimeter(rec_start, end=rec_end,
+                                                 shape=self._grid_img.shape)
+
+                    self._grid_img[rr, cc] = True
+
+        img[self._grid_img] = 207
+
+        # Draw current Patch
+        start_x = self._image\
+            .patches[self._current_patch_index].patch_index[0] * patch_size_x
+
+        stop_x = start_x + patch_size_x
+
+        start_y = self\
+            ._image.patches[self._current_patch_index]\
+            .patch_index[1] * patch_size_y
+
+        stop_y = start_y + patch_size_y
+
+        rec_start = (start_x, start_y)
+        rec_end = (stop_x, stop_y)
+
+        rr, cc = rectangle_perimeter(rec_start, end=rec_end,
+                                     shape=self._image.image.shape)
+
+        img[rr, cc] = [255, 255, 0]
+
+        for i in range(4):
+            rec_start = (rec_start[0] + 1, rec_start[1] + 1)
+            rec_end = (rec_end[0] - 1, rec_end[1] - 1)
+
+            rr, cc = rectangle_perimeter(rec_start, end=rec_end,
+                                         shape=self._image.image.shape)
+
+            img[rr, cc] = [255, 255, 0]
+
+        return img
+
+    def _get_image_name_from_path(self, path):
+        &#34;&#34;&#34;
+        Get the name of the image from its original path.
+
+        Args:
+            path: The path to the original image.
+
+        Returns:
+            The name to save the image mask as.
+        &#34;&#34;&#34;
+        if os.path.isdir(path):
+            raise ValueError(&#34;Cannot get image name from a directory.&#34;)
+
+        basename = os.path.basename(path)
+
+        return os.path.splitext(basename)[0] + &#39;_mask.png&#39;</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="friendly_ground_truth.controller.controller.Controller.CONTEXT_TRANSPARENCY"><code class="name">var <span class="ident">CONTEXT_TRANSPARENCY</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="friendly_ground_truth.controller.controller.Controller.DEFAULT_PREFS"><code class="name">var <span class="ident">DEFAULT_PREFS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="friendly_ground_truth.controller.controller.Controller.NUM_PATCHES"><code class="name">var <span class="ident">NUM_PATCHES</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="friendly_ground_truth.controller.controller.Controller.image_tools"><code class="name">var <span class="ident">image_tools</span></code></dt>
+<dd>
+<div class="desc"><p>A dictionary of available tools for annotating the image with.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def image_tools(self):
+    &#34;&#34;&#34;
+    A dictionary of available tools for annotating the image with.
+    &#34;&#34;&#34;
+    return self._image_tools</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="friendly_ground_truth.controller.controller.Controller.activate_tool"><code class="name flex">
+<span>def <span class="ident">activate_tool</span></span>(<span>self, id)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Activate the given tool id.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id</code></strong></dt>
+<dd>The id of the tool.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>None</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="postcondition">Postcondition</h2>
+<p>The current tool is set to the tool matching the id
+Any activation functionality of the tool is performed.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def activate_tool(self, id):
+    &#34;&#34;&#34;
+    Activate the given tool id.
+
+    Args:
+        id: The id of the tool.
+
+    Returns:
+        None
+
+    Postcondition:
+        The current tool is set to the tool matching the id
+        Any activation functionality of the tool is performed.
+    &#34;&#34;&#34;
+    if self._image is None:
+        return
+
+    tool = self.image_tools[id]
+    tool.image = self._image
+    tool.patch = self._image.patches[self._current_patch_index]
+
+    old_tool = None
+
+    if not tool.persistant:
+        old_tool = self._current_tool
+    else:
+        self._event_logger.active_tool = tool.name
+
+    self._current_tool = tool
+
+    tool.on_activate(self._current_patch_index)
+
+    if old_tool is not None:
+        self._current_tool = old_tool
+        tool = old_tool
+
+    tool.lock_undos()
+    # self._display_current_patch()
+    self._main_window.update_info_panel(tool)
+    self._main_window.set_canvas_cursor(tool.cursor)
+    tool.unlock_undos()
+
+    if not self._undo_manager.undo_empty:
+        self._main_window.enable_button(self._undo_id)</code></pre>
+</details>
+</dd>
+<dt id="friendly_ground_truth.controller.controller.Controller.adjust_tool"><code class="name flex">
+<span>def <span class="ident">adjust_tool</span></span>(<span>self, direction)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adjust the current tool.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>direction</code></strong></dt>
+<dd>An integer, positive is up, negative is down.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>None</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="postconditions">Postconditions</h2>
+<p>The current tool's adjust tool function is called.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def adjust_tool(self, direction):
+    &#34;&#34;&#34;
+    Adjust the current tool.
+
+    Args:
+        direction: An integer, positive is up, negative is down.
+
+    Returns:
+        None
+
+    Postconditions:
+        The current tool&#39;s adjust tool function is called.
+    &#34;&#34;&#34;
+    self._current_tool.on_adjust(direction)
+    # self._display_current_patch()
+
+    if not self._undo_manager.undo_empty:
+        self._main_window.enable_button(self._undo_id)</code></pre>
+</details>
+</dd>
+<dt id="friendly_ground_truth.controller.controller.Controller.click_event"><code class="name flex">
+<span>def <span class="ident">click_event</span></span>(<span>self, pos)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A click event in the main window has occured.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>pos</code></strong></dt>
+<dd>The position of the event.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>None</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="postconditions">Postconditions</h2>
+<p>The current tool's on_click() function is called.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def click_event(self, pos):
+    &#34;&#34;&#34;
+    A click event in the main window has occured.
+
+    Args:
+        pos: The position of the event.
+
+    Returns:
+        None
+
+    Postconditions:
+        The current tool&#39;s on_click() function is called.
+    &#34;&#34;&#34;
+    # Correct for offset in context image
+    pos = pos[0] - self._patch_offset[1], pos[1] - self._patch_offset[0]
+
+    # Need to invert the position, because tkinter coords are backward from
+    # skimage
+    pos = round(pos[1]-1), round(pos[0]-1)
+
+    self._logger.debug(&#34;Click Event: {}&#34;.format(pos))
+
+    if self._current_tool is not None:
+        self._current_tool.on_click(pos)
+
+    if not self._undo_manager.undo_empty:
+        self._main_window.enable_button(self._undo_id)</code></pre>
+</details>
+</dd>
+<dt id="friendly_ground_truth.controller.controller.Controller.drag_event"><code class="name flex">
+<span>def <span class="ident">drag_event</span></span>(<span>self, pos, drag_id=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A click event in the main window has occured.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>pos</code></strong></dt>
+<dd>The position of the event.</dd>
+<dt><strong><code>drag_id</code></strong></dt>
+<dd>Unique identifier for the drag event.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>None</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="postconditions">Postconditions</h2>
+<p>The current tool's on_drag() function is called.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def drag_event(self, pos, drag_id=None):
+    &#34;&#34;&#34;
+    A click event in the main window has occured.
+
+    Args:
+        pos: The position of the event.
+        drag_id: Unique identifier for the drag event.
+
+    Returns:
+        None
+
+    Postconditions:
+        The current tool&#39;s on_drag() function is called.
+    &#34;&#34;&#34;
+    # Correct for offset in context image
+    pos = pos[0] - self._patch_offset[1], pos[1] - self._patch_offset[0]
+
+    # Need to invert the position, because tkinter coords are backward from
+    # skimage
+    pos = round(pos[1]-1), round(pos[0]-1)
+
+    self._current_tool.on_drag(pos, drag_id=drag_id)
+
+    if not self._undo_manager.undo_empty:
+        self._main_window.enable_button(self._undo_id)</code></pre>
+</details>
+</dd>
+<dt id="friendly_ground_truth.controller.controller.Controller.get_image_preview"><code class="name flex">
+<span>def <span class="ident">get_image_preview</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get a preview of the image mask.</p>
+<h2 id="returns">Returns</h2>
+<p>An image representing the preview of the mask.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_image_preview(self):
+    &#34;&#34;&#34;
+    Get a preview of the image mask.
+
+
+    Returns:
+        An image representing the preview of the mask.
+    &#34;&#34;&#34;
+
+    img = self._image.create_overlay_img()
+
+    patch_size_x = self\
+        ._image.patches[self._current_patch_index].patch.shape[0]
+
+    patch_size_y = self\
+        ._image.patches[self._current_patch_index].patch.shape[1]
+
+    # Draw patch grid
+    if self._grid_img is None:
+        self._grid_img = np.zeros(img.shape, dtype=np.bool)
+
+        for i in range(self.NUM_PATCHES):
+            for j in range(self.NUM_PATCHES):
+                start_x = i * patch_size_x
+                stop_x = start_x + patch_size_x
+
+                start_y = j * patch_size_y
+                stop_y = start_y + patch_size_y
+
+                rec_start = (start_x, start_y)
+                rec_end = (stop_x, stop_y)
+
+                rr, cc = rectangle_perimeter(rec_start, end=rec_end,
+                                             shape=self._grid_img.shape)
+
+                self._grid_img[rr, cc] = True
+
+    img[self._grid_img] = 207
+
+    # Draw current Patch
+    start_x = self._image\
+        .patches[self._current_patch_index].patch_index[0] * patch_size_x
+
+    stop_x = start_x + patch_size_x
+
+    start_y = self\
+        ._image.patches[self._current_patch_index]\
+        .patch_index[1] * patch_size_y
+
+    stop_y = start_y + patch_size_y
+
+    rec_start = (start_x, start_y)
+    rec_end = (stop_x, stop_y)
+
+    rr, cc = rectangle_perimeter(rec_start, end=rec_end,
+                                 shape=self._image.image.shape)
+
+    img[rr, cc] = [255, 255, 0]
+
+    for i in range(4):
+        rec_start = (rec_start[0] + 1, rec_start[1] + 1)
+        rec_end = (rec_end[0] - 1, rec_end[1] - 1)
+
+        rr, cc = rectangle_perimeter(rec_start, end=rec_end,
+                                     shape=self._image.image.shape)
+
+        img[rr, cc] = [255, 255, 0]
+
+    return img</code></pre>
+</details>
+</dd>
+<dt id="friendly_ground_truth.controller.controller.Controller.get_preferences_path"><code class="name flex">
+<span>def <span class="ident">get_preferences_path</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the path to the preferences file.</p>
+<h2 id="returns">Returns</h2>
+<p>The path to the preferences file.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_preferences_path(self):
+    &#34;&#34;&#34;
+    Return the path to the preferences file.
+
+
+    Returns:
+        The path to the preferences file.
+    &#34;&#34;&#34;
+    if platform != &#39;win32&#39;:
+
+        home = os.path.expanduser(&#34;~&#34;)
+        data_dir = os.path.join(home, &#34;.friendly_ground_truth/&#34;)
+
+        if not os.path.exists(data_dir):
+            os.mkdir(data_dir)
+
+        preferences_path = os.path.join(data_dir,
+                                        &#34;user_preferences.json&#34;)
+
+    else:
+        preferences_path = &#34;./user_preferences.json&#34;
+
+    return preferences_path</code></pre>
+</details>
+</dd>
+<dt id="friendly_ground_truth.controller.controller.Controller.load_existing_mask"><code class="name flex">
+<span>def <span class="ident">load_existing_mask</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Load in an existing annotation mask.</p>
+<h2 id="returns">Returns</h2>
+<p>False if the the mask cannot be loaded.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_existing_mask(self):
+    &#34;&#34;&#34;
+    Load in an existing annotation mask.
+
+
+    Returns:
+        False if the the mask cannot be loaded.
+    &#34;&#34;&#34;
+    if self._image is None:
+        tkinter.messagebox.showinfo(&#34;No Image Loaded&#34;,
+                                    &#34;You must load an image before &#34;
+                                    &#34; loading an existing mask!&#34;)
+
+        return False
+
+    self._context_img = None
+    self._grid_img = None
+
+    filetypes = [(&#34;PNG Files&#34;, &#34;*.png&#34;), (&#34;JPEG Files&#34;, &#34;*.jpg&#34;)]
+
+    if self._last_load_dir is None:
+        initial_dir = os.path.expanduser(&#34;~&#34;)
+    else:
+        initial_dir = self._last_load_dir
+
+    file_name = tkinter.filedialog.askopenfilename(filetypes=filetypes,
+                                                   initialdir=initial_dir)
+
+    self._logger.debug(&#34;Selected mask: {}&#34;.format(file_name))
+    # Make sure the names are similar
+    mask_filename = os.path.split(file_name)[-1]
+
+    image_filename = \
+        os.path.splitext(os.path.split(self._image_path)[-1])[0]
+
+    if image_filename not in mask_filename:
+        tkinter.messagebox.showinfo(&#34;Invalid Mask&#34;,
+                                    &#34;The name of the mask you have chosen&#34;
+                                    &#34; does not match the name of the &#34;
+                                    &#34;loaded image.&#34;)
+
+        return False
+
+    if file_name is None or file_name == ():
+        return False
+
+    try:
+        self._main_window.start_progressbar(self.NUM_PATCHES ** 2)
+
+
+        self._image.load_mask(file_name)
+
+    except FileNotFoundError:
+        self._logger.exception(&#34;There was a problem loading the image.&#34;)
+        return False
+
+    image_shape = self._image.image.shape
+    patch_grid_shape = self._image.patches[0].patch.shape
+
+    self._event_logger.log_load_mask(image_filename, image_shape[1],
+                                     image_shape[0], patch_grid_shape[1],
+                                     patch_grid_shape[0])
+
+    self._current_patch_index = 0
+
+    self._logger.debug(&#34;Displaying patch.&#34;)
+    self._display_current_patch(new=True)
+
+    self.activate_tool(self._default_tool)
+    self._main_window.set_default_tool(self._default_tool)</code></pre>
+</details>
+</dd>
+<dt id="friendly_ground_truth.controller.controller.Controller.load_new_image"><code class="name flex">
+<span>def <span class="ident">load_new_image</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Load a new image with a file dialog.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>None</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_new_image(self):
+    &#34;&#34;&#34;
+    Load a new image with a file dialog.
+
+
+    Returns:
+        None
+    &#34;&#34;&#34;
+
+    self._context_img = None
+    self._grid_img = None
+    self._event_logger.active_tool = &#34;None&#34;
+
+    filetypes = [(&#34;TIF Files&#34;, &#34;*.tif&#34;), (&#34;TIFF Files&#34;, &#34;*.tiff&#34;),
+                 (&#34;PNG Files&#34;, &#34;*.png&#34;), (&#34;JPEG Files&#34;, &#34;*.jpg&#34;)]
+
+    if self._last_load_dir is None:
+        initial_dir = os.path.expanduser(&#34;~&#34;)
+    else:
+        initial_dir = self._last_load_dir
+
+    file_name = tkinter.filedialog.askopenfilename(filetypes=filetypes,
+                                                   initialdir=initial_dir)
+
+    if file_name is None or file_name == ():
+        return
+
+    self._last_load_dir = os.path.split(file_name)[0]
+
+    self._image_path = file_name
+
+    try:
+        self._main_window.start_progressbar(self.NUM_PATCHES ** 2)
+
+        del self._image
+        self._image = Image(file_name, 10, self._update_progressbar)
+
+    except FileNotFoundError:
+        self._logger.exception(&#34;There was a problem loading the image.&#34;)
+        return
+
+    image_filename = os.path.split(file_name)[-1]
+    image_shape = self._image.image.shape
+    patch_grid_shape = self._image.patches[0].patch.shape
+
+    self._event_logger.log_load_image(image_filename, image_shape[1],
+                                      image_shape[0], patch_grid_shape[1],
+                                      patch_grid_shape[0])
+
+    self._current_patch_index = 0
+
+    self._display_current_patch(new=True)
+    self._main_window.update_image_indicator(self._image_path)
+
+    self.activate_tool(self._default_tool)
+    self._main_window.set_default_tool(self._default_tool)</code></pre>
+</details>
+</dd>
+<dt id="friendly_ground_truth.controller.controller.Controller.load_preferences"><code class="name flex">
+<span>def <span class="ident">load_preferences</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Load the preferences saved in the preferences file.</p>
+<h2 id="returns">Returns</h2>
+<p>A dictionary containing the user's preferences.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_preferences(self):
+    &#34;&#34;&#34;
+    Load the preferences saved in the preferences file.
+
+
+    Returns:
+        A dictionary containing the user&#39;s preferences.
+    &#34;&#34;&#34;
+    if not os.path.exists(self.PREFERENCES_PATH):
+        return self.DEFAULT_PREFS
+
+    with open(self.PREFERENCES_PATH, &#39;r&#39;) as fin:
+        preferences = json.load(fin)
+
+    return preferences</code></pre>
+</details>
+</dd>
+<dt id="friendly_ground_truth.controller.controller.Controller.log_drag_event"><code class="name flex">
+<span>def <span class="ident">log_drag_event</span></span>(<span>self, drag_type, start, end)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Add a mouse drag event to the event log.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>drag_type</code></strong></dt>
+<dd>The type of drag: 'brush', 'pan'.</dd>
+<dt><strong><code>start</code></strong></dt>
+<dd>The starting position of the drag.</dd>
+<dt><strong><code>end</code></strong></dt>
+<dd>The end position of the drag.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>None</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def log_drag_event(self, drag_type, start, end):
+    &#34;&#34;&#34;
+    Add a mouse drag event to the event log.
+
+    Args:
+        drag_type: The type of drag: &#39;brush&#39;, &#39;pan&#39;.
+        start: The starting position of the drag.
+        end: The end position of the drag.
+
+    Returns:
+        None
+    &#34;&#34;&#34;
+
+    patch_grid_coord = self.\
+        _image.patches[self._current_patch_index].patch_index
+
+    start = self._convert_canvas_to_patch_pos(start)
+    end = self._convert_canvas_to_patch_pos(end)
+
+    image_start = self._convert_patch_to_image_pos(start)
+    image_end = self._convert_patch_to_image_pos(end)
+
+    self._event_logger.log_event(&#34;drag&#34;, patch_grid_coord,
+                                 patch_start=start, patch_end=end,
+                                 image_start=image_start,
+                                 image_end=image_end,
+                                 drag_type=drag_type)</code></pre>
+</details>
+</dd>
+<dt id="friendly_ground_truth.controller.controller.Controller.log_mouse_event"><code class="name flex">
+<span>def <span class="ident">log_mouse_event</span></span>(<span>self, pos, event, button)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Add a mouse event to the event log.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>pos</code></strong></dt>
+<dd>The position of the mouse event.</dd>
+<dt><strong><code>event</code></strong></dt>
+<dd>The type of event: 'click', 'release'</dd>
+<dt><strong><code>button</code></strong></dt>
+<dd>The mouse button used for the event.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>None</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def log_mouse_event(self, pos, event, button):
+    &#34;&#34;&#34;
+    Add a mouse event to the event log.
+
+    Args:
+        pos: The position of the mouse event.
+        event: The type of event: &#39;click&#39;, &#39;release&#39;
+        button: The mouse button used for the event.
+
+    Returns:
+        None
+    &#34;&#34;&#34;
+
+    patch_pos = self._convert_canvas_to_patch_pos(pos)
+
+    patch_shape = self.\
+        _image.patches[self._current_patch_index].patch.shape
+
+    if patch_pos[0] &lt; 0 or patch_pos[0] &gt; patch_shape[0]:
+        return
+
+    if patch_pos[1] &lt; 0 or patch_pos[1] &gt; patch_shape[1]:
+        return
+
+    image_pos = self._convert_patch_to_image_pos(patch_pos)
+
+    patch_grid_coord = self.\
+        _image.patches[self._current_patch_index].patch_index
+
+    if event == &#34;release&#34;:
+
+        self._event_logger.log_event(&#34;mouse_up&#34;, patch_grid_coord,
+                                     patch_coord=patch_pos,
+                                     image_coord=image_pos,
+                                     mouse_button=button)
+    elif event == &#34;click&#34;:
+        self._event_logger.log_event(&#34;mouse_down&#34;, patch_grid_coord,
+                                     patch_coord=patch_pos,
+                                     image_coord=image_pos,
+                                     mouse_button=button)</code></pre>
+</details>
+</dd>
+<dt id="friendly_ground_truth.controller.controller.Controller.log_zoom_event"><code class="name flex">
+<span>def <span class="ident">log_zoom_event</span></span>(<span>self, zoom_factor)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Add a zoom event to the event log.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>zoom_factor</code></strong></dt>
+<dd>The new zoom factor.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>None</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def log_zoom_event(self, zoom_factor):
+    &#34;&#34;&#34;
+    Add a zoom event to the event log.
+
+    Args:
+        zoom_factor: The new zoom factor.
+
+    Returns:
+        None
+    &#34;&#34;&#34;
+
+    patch_grid_coord = self.\
+        _image.patches[self._current_patch_index].patch_index
+
+    self._event_logger.log_event(&#34;zoom_factor_change&#34;, patch_grid_coord,
+                                 new_zoom_factor=zoom_factor)</code></pre>
+</details>
+</dd>
+<dt id="friendly_ground_truth.controller.controller.Controller.navigate_to_patch"><code class="name flex">
+<span>def <span class="ident">navigate_to_patch</span></span>(<span>self, pos)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Navigate to the patch containing the given coordinates in the original
+image.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>pos</code></strong></dt>
+<dd>The position in the image to go to.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>None</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def navigate_to_patch(self, pos):
+    &#34;&#34;&#34;
+    Navigate to the patch containing the given coordinates in the original
+    image.
+
+    Args:
+        pos: The position in the image to go to.
+
+    Returns:
+        None
+    &#34;&#34;&#34;
+
+    pos = (pos[1], pos[0])
+
+    patch_index = self._image.get_patch_from_coords(pos)
+
+    patch = self._image.patches[patch_index]
+
+    self._next_patch_callback(patch, patch_index)</code></pre>
+</details>
+</dd>
+<dt id="friendly_ground_truth.controller.controller.Controller.save_mask"><code class="name flex">
+<span>def <span class="ident">save_mask</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Save the finished image mask.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>None</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def save_mask(self):
+    &#34;&#34;&#34;
+    Save the finished image mask.
+
+
+    Returns:
+        None
+    &#34;&#34;&#34;
+
+    if self._image is None:
+        return
+
+    self._mask_saved = True
+
+    if self._last_save_dir is None:
+        initial_dir = os.path.expanduser(&#34;~&#34;)
+    else:
+        initial_dir = self._last_save_dir
+
+    dir_path = tkinter.filedialog.askdirectory(initialdir=initial_dir)
+
+    if dir_path is None:
+        return
+
+    self._last_save_dir = dir_path
+
+    image_name = self._get_image_name_from_path(self._image_path)
+    # labels_name = self._get_landmark_name_from_path(self._image_path)
+
+    mask_pathname = os.path.join(dir_path, image_name)
+    # label_pathname = os.path.join(dir_path, labels_name)
+
+    try:
+        self._image.export_mask(mask_pathname)
+        # self._image.export_labels(label_pathname)
+
+        tkinter.messagebox.showinfo(&#34;Image Mask Saved!&#34;,
+                                    &#34;Image Mask Saved!&#34;)
+    except IOError:
+        self._logger.error(&#34;Could not save file!&#34;)
+
+    self._previewed = False</code></pre>
+</details>
+</dd>
+<dt id="friendly_ground_truth.controller.controller.Controller.save_preferences"><code class="name flex">
+<span>def <span class="ident">save_preferences</span></span>(<span>self, preferences)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Save the user preferences.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>preferences</code></strong></dt>
+<dd>A dictionary containing the user preferences.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>None</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def save_preferences(self, preferences):
+    &#34;&#34;&#34;
+    Save the user preferences.
+
+    Args:
+        preferences: A dictionary containing the user preferences.
+
+    Returns:
+        None
+    &#34;&#34;&#34;
+
+    with open(self.PREFERENCES_PATH, &#39;w&#39;) as fout:
+        json.dump(preferences, fout)</code></pre>
+</details>
+</dd>
+<dt id="friendly_ground_truth.controller.controller.Controller.set_preferences"><code class="name flex">
+<span>def <span class="ident">set_preferences</span></span>(<span>self, preferences)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Set the current preferences for the application.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>preferences</code></strong></dt>
+<dd>A dictionary of preferences and their values.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>None</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_preferences(self, preferences):
+    &#34;&#34;&#34;
+    Set the current preferences for the application.
+
+    Args:
+        preferences: A dictionary of preferences and their values.
+
+    Returns:
+        None
+    &#34;&#34;&#34;
+    theme = preferences[&#39;theme&#39;]
+
+    self._main_window.set_theme(theme)</code></pre>
+</details>
+</dd>
+<dt id="friendly_ground_truth.controller.controller.Controller.show_saved_preview"><code class="name flex">
+<span>def <span class="ident">show_saved_preview</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Display a preview of the saved mask overlaid with the image.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>None</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="postconditions">Postconditions</h2>
+<p>A window displaying the image and mask is shown.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def show_saved_preview(self):
+    &#34;&#34;&#34;
+    Display a preview of the saved mask overlaid with the image.
+
+
+    Returns:
+        None
+
+    Postconditions:
+        A window displaying the image and mask is shown.
+    &#34;&#34;&#34;
+
+    overlay = self._image.create_overlay_img()
+
+    PreviewWindow(overlay, self, self._main_window.style)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="friendly_ground_truth.controller" href="index.html">friendly_ground_truth.controller</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="friendly_ground_truth.controller.controller.Controller" href="#friendly_ground_truth.controller.controller.Controller">Controller</a></code></h4>
+<ul class="">
+<li><code><a title="friendly_ground_truth.controller.controller.Controller.CONTEXT_TRANSPARENCY" href="#friendly_ground_truth.controller.controller.Controller.CONTEXT_TRANSPARENCY">CONTEXT_TRANSPARENCY</a></code></li>
+<li><code><a title="friendly_ground_truth.controller.controller.Controller.DEFAULT_PREFS" href="#friendly_ground_truth.controller.controller.Controller.DEFAULT_PREFS">DEFAULT_PREFS</a></code></li>
+<li><code><a title="friendly_ground_truth.controller.controller.Controller.NUM_PATCHES" href="#friendly_ground_truth.controller.controller.Controller.NUM_PATCHES">NUM_PATCHES</a></code></li>
+<li><code><a title="friendly_ground_truth.controller.controller.Controller.activate_tool" href="#friendly_ground_truth.controller.controller.Controller.activate_tool">activate_tool</a></code></li>
+<li><code><a title="friendly_ground_truth.controller.controller.Controller.adjust_tool" href="#friendly_ground_truth.controller.controller.Controller.adjust_tool">adjust_tool</a></code></li>
+<li><code><a title="friendly_ground_truth.controller.controller.Controller.click_event" href="#friendly_ground_truth.controller.controller.Controller.click_event">click_event</a></code></li>
+<li><code><a title="friendly_ground_truth.controller.controller.Controller.drag_event" href="#friendly_ground_truth.controller.controller.Controller.drag_event">drag_event</a></code></li>
+<li><code><a title="friendly_ground_truth.controller.controller.Controller.get_image_preview" href="#friendly_ground_truth.controller.controller.Controller.get_image_preview">get_image_preview</a></code></li>
+<li><code><a title="friendly_ground_truth.controller.controller.Controller.get_preferences_path" href="#friendly_ground_truth.controller.controller.Controller.get_preferences_path">get_preferences_path</a></code></li>
+<li><code><a title="friendly_ground_truth.controller.controller.Controller.image_tools" href="#friendly_ground_truth.controller.controller.Controller.image_tools">image_tools</a></code></li>
+<li><code><a title="friendly_ground_truth.controller.controller.Controller.load_existing_mask" href="#friendly_ground_truth.controller.controller.Controller.load_existing_mask">load_existing_mask</a></code></li>
+<li><code><a title="friendly_ground_truth.controller.controller.Controller.load_new_image" href="#friendly_ground_truth.controller.controller.Controller.load_new_image">load_new_image</a></code></li>
+<li><code><a title="friendly_ground_truth.controller.controller.Controller.load_preferences" href="#friendly_ground_truth.controller.controller.Controller.load_preferences">load_preferences</a></code></li>
+<li><code><a title="friendly_ground_truth.controller.controller.Controller.log_drag_event" href="#friendly_ground_truth.controller.controller.Controller.log_drag_event">log_drag_event</a></code></li>
+<li><code><a title="friendly_ground_truth.controller.controller.Controller.log_mouse_event" href="#friendly_ground_truth.controller.controller.Controller.log_mouse_event">log_mouse_event</a></code></li>
+<li><code><a title="friendly_ground_truth.controller.controller.Controller.log_zoom_event" href="#friendly_ground_truth.controller.controller.Controller.log_zoom_event">log_zoom_event</a></code></li>
+<li><code><a title="friendly_ground_truth.controller.controller.Controller.navigate_to_patch" href="#friendly_ground_truth.controller.controller.Controller.navigate_to_patch">navigate_to_patch</a></code></li>
+<li><code><a title="friendly_ground_truth.controller.controller.Controller.save_mask" href="#friendly_ground_truth.controller.controller.Controller.save_mask">save_mask</a></code></li>
+<li><code><a title="friendly_ground_truth.controller.controller.Controller.save_preferences" href="#friendly_ground_truth.controller.controller.Controller.save_preferences">save_preferences</a></code></li>
+<li><code><a title="friendly_ground_truth.controller.controller.Controller.set_preferences" href="#friendly_ground_truth.controller.controller.Controller.set_preferences">set_preferences</a></code></li>
+<li><code><a title="friendly_ground_truth.controller.controller.Controller.show_saved_preview" href="#friendly_ground_truth.controller.controller.Controller.show_saved_preview">show_saved_preview</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.8.1</a>.</p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad()</script>
+</body>
+</html>

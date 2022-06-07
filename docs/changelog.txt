@@ -1,0 +1,137 @@
+# Changelog
+This file keeps a record of important changes to the project.
+
+This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## Unreleased - <>
+
+## [v0.13.3] - 2021-10-12
+
+### Changed
+- Pillow to new stable version
+- urllib3 from v1.25.8 to v1.26.5
+- requests from v2.23.0 to v2.26.0
+
+## [v0.13.2] - 2021-05-18
+
+### Changed
+- Py from v1.8.1 to 1.10.0
+
+## [v0.13.1] - 2021-04-06
+
+### Fixed
+- Generation of new pydocs
+
+## [v0.13.0] - 2021-04-06
+
+### Added
+- Ability to load in existing masks
+
+### Changed
+- Pillow from v7.1.1 to 8.1.1
+
+## [v0.11.2] - 2020-06-18
+- Fix issues with the end of the image
+
+## [v0.11.1] - 2020-06-18
+- Threshold tool is selected by default when an image is loaded
+
+## [v0.11.0] - 2020-06-16
+- Event logging for all interactions with the canvas
+
+## [v0.10.0] - 2020-06-10
+### Changed
+- Removed saving dialog at the end of the image patches.
+- The preview image is now scrollable
+- Dockable and Floatable preview window that allows navigation by clicking.
+
+## [v0.9.2] - 2020-06-01
+### Changed
+- Brush strokes are now detected separately, meaning the undo operation won't
+undo everything you have done anymore.
+- Fixed issue with rendering the image when moving to the next patch.
+- Fix issue with incorrect brush size being drawn.
+
+## [v0.9.1] - 2020-05-27
+### Changed
+- Loading a new image will now work properly and replace the old image on the
+screen.
+- Selecting "Save Image" when there is no image loaded no longer causes
+problems.  Still not sure why anyone would do this though....
+- Can now pan with the right mouse button, even when using the brush tools.
+
+## [v0.9.0] - 2020-05-25
+### Added
+- Improved Pan and Zoom Performance
+- Auto centering of current patch when moving to the next patch
+- Each patch now keeps track of it's own undo history, meaning you can go back
+to a patch and undo any operation.
+- Improved brush drawing latency.
+- Improved UI performance
+- Dark Mode
+
+### Changed
+- No Root Tool now automatically moves to the next patch
+- Flood tools now retain their settings across patches
+- Improved accuracy of click locations
+- Caps lock no longer affects keyboard shortcuts
+
+## [v0.7.7] - 2020-05-09
+### ADDED
+- Use windows console to get proper desktop path
+- Fix using plus and minus for zooming on windows
+- New uninstaller exe for removing program files
+
+## [v0.7.6] - 2020-05-08
+### Added
+- Build archives now include README, changelog, and are named with version
+numbers
+
+## [v0.7.5] - 2020-05-08
+### Changed
+- No longer need to hold CTRL to pan, simply click and drag at any time!
+- Improved windows installer dialog
+
+## [v0.7.4] - 2020-05-07
+### Changed
+- Remove matplotlib dependency
+- Windows installer
+
+## [v0.7.3] - 2020-05-07
+### Added 
+- Updated keyboard shortcuts dialog to reflect all usable shortcuts
+- Redo button becomes disabled if there are no re-doable actions
+
+## [v0.7.2] - 2020-05-06
+### Changed
+- Remove installer executable for windows in favour of using a single
+executable that installs on start
+
+## [v0.7.1] - 2020-05-06
+### Changed
+- Fix path expansion on windows for installing shortcut
+- Fix path to start menu programs for installing windows shortcut
+
+## [v0.7.0d]
+### Added
+- Allow windows debug builds
+
+## [v0.7.0]
+
+- Improved panning and zooming, allowed from any tool 
+      - Panning can be done by clicking the mouse wheel and dragging, or Ctrl-clicking and dragging
+      - Zooming can be done at any time by scrolling the mouse wheel, or by Ctrl +/-
+- Tool info panels display properties of the selected tool and allow adjustment
+- Fixes for indicating the active tool on Mac
+- Removal of landmark annotations
+- The top right corner displays the name of the image currently being annotated
+- Context patches around the current patch allow better annotations
+- Tooltips for the toolbar icons
+- Application icon
+- New Undo and Redo tools
+- Flood tools now take effect on first click
+- When loading and saving images, the dialog starts in the user's home directory, and remembers their choice for future use
+- Installation scripts that hopefully work
+
+## [v0.6.0]
+- Test

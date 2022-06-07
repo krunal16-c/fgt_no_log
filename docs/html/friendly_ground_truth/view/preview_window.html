@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.8.1" />
+<title>friendly_ground_truth.view.preview_window API documentation</title>
+<meta name="description" content="File Name: preview_window.py …" />
+<link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' rel='stylesheet'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/8.0.0/sanitize.min.css' rel='stylesheet'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+<style>.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>friendly_ground_truth.view.preview_window</code></h1>
+</header>
+<section id="section-intro">
+<p>File Name: preview_window.py</p>
+<p>Authors: Kyle Seidenthal</p>
+<p>Date: 18-05-2020</p>
+<p>Description: An image mask preview window.</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;
+File Name: preview_window.py
+
+Authors: Kyle Seidenthal
+
+Date: 18-05-2020
+
+Description: An image mask preview window.
+
+&#34;&#34;&#34;
+
+import tkinter as tk
+from tkinter import ttk
+
+from friendly_ground_truth.view.fgt_canvas import PatchNavCanvas
+
+
+class PreviewFrame(ttk.Frame):
+
+    def __init__(self, master, img, controller, style):
+
+        ttk.Frame.__init__(self, master=master, style=&#34;Preview.TFrame&#34;)
+
+        self._master = master
+
+        self.img = img
+        self.controller = controller
+
+        self._banner = ttk.Frame(self, borderwidth=5,
+                                 style=&#34;ButtonPanel.TFrame&#34;)
+
+        self._banner_label = ttk.Label(self._banner, text=&#34;Preview&#34;)
+
+        self._banner_label.pack(side=&#34;left&#34;)
+
+        self._canvas = PatchNavCanvas(self, self.img, self, style)
+
+        self._canvas.set_zoom(-5)
+
+        self._banner.grid(row=0, column=0, sticky=&#34;NEW&#34;)
+        self._canvas.grid(row=1, column=0, sticky=&#34;NSEW&#34;)
+
+        self.grid_columnconfigure(0, weight=1)
+        self.grid_rowconfigure(1, weight=1)
+
+    def set_theme(self, style):
+
+        self._canvas.set_theme(style)
+
+    def navigate_to_patch(self, pos):
+        &#34;&#34;&#34;
+        Navigate to the patch containing the given coordinates in the original
+        image.
+
+        Args:
+            pos: The position in the image to go to.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+
+        self.controller.navigate_to_patch(pos)
+
+    def update_image(self, img):
+        &#34;&#34;&#34;
+        Update the preview image.
+
+        Args:
+            img: The image to show in the preview.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        self.img = img
+        self._canvas.set_image(self.img)
+
+    def new_image(self, img):
+        &#34;&#34;&#34;
+        Reset the image on the canvas.
+
+        Args:
+            img: The image.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        self.img = img
+        self._canvas.new_image(img)
+
+
+class PreviewWindow(tk.Toplevel):
+    &#34;&#34;&#34;
+    A window for previewing an image.
+
+    Attributes:
+        img: The image for previewing
+    &#34;&#34;&#34;
+
+    def __init__(self, img, controller, style):
+        self._base = tk.Toplevel()
+        self._base.title(&#34;Preview&#34;)
+        self._base.geometry(&#34;1000x800+200+200&#34;)
+
+        self._frame = PreviewFrame(self._base, img, controller, style)
+
+        self._frame.pack(fill=&#39;both&#39;, expand=True)
+
+    def update_image(self, img):
+        &#34;&#34;&#34;
+        Update the preview image.
+
+        Args:
+            img: The image to display.
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+
+        self._frame.update_image(img)
+
+    def set_theme(self, style):
+
+        self._frame.set_theme(style)
+
+    def destroy(self):
+
+        self._base.destroy()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="friendly_ground_truth.view.preview_window.PreviewFrame"><code class="flex name class">
+<span>class <span class="ident">PreviewFrame</span></span>
+<span>(</span><span>master, img, controller, style)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Ttk Frame widget is a container, used to group other widgets
+together.</p>
+<p>Construct a Ttk Frame with parent master.</p>
+<p>STANDARD OPTIONS</p>
+<pre><code>class, cursor, style, takefocus
+</code></pre>
+<p>WIDGET-SPECIFIC OPTIONS</p>
+<pre><code>borderwidth, relief, padding, width, height
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class PreviewFrame(ttk.Frame):
+
+    def __init__(self, master, img, controller, style):
+
+        ttk.Frame.__init__(self, master=master, style=&#34;Preview.TFrame&#34;)
+
+        self._master = master
+
+        self.img = img
+        self.controller = controller
+
+        self._banner = ttk.Frame(self, borderwidth=5,
+                                 style=&#34;ButtonPanel.TFrame&#34;)
+
+        self._banner_label = ttk.Label(self._banner, text=&#34;Preview&#34;)
+
+        self._banner_label.pack(side=&#34;left&#34;)
+
+        self._canvas = PatchNavCanvas(self, self.img, self, style)
+
+        self._canvas.set_zoom(-5)
+
+        self._banner.grid(row=0, column=0, sticky=&#34;NEW&#34;)
+        self._canvas.grid(row=1, column=0, sticky=&#34;NSEW&#34;)
+
+        self.grid_columnconfigure(0, weight=1)
+        self.grid_rowconfigure(1, weight=1)
+
+    def set_theme(self, style):
+
+        self._canvas.set_theme(style)
+
+    def navigate_to_patch(self, pos):
+        &#34;&#34;&#34;
+        Navigate to the patch containing the given coordinates in the original
+        image.
+
+        Args:
+            pos: The position in the image to go to.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+
+        self.controller.navigate_to_patch(pos)
+
+    def update_image(self, img):
+        &#34;&#34;&#34;
+        Update the preview image.
+
+        Args:
+            img: The image to show in the preview.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        self.img = img
+        self._canvas.set_image(self.img)
+
+    def new_image(self, img):
+        &#34;&#34;&#34;
+        Reset the image on the canvas.
+
+        Args:
+            img: The image.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        self.img = img
+        self._canvas.new_image(img)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>tkinter.ttk.Frame</li>
+<li>tkinter.ttk.Widget</li>
+<li>tkinter.Widget</li>
+<li>tkinter.BaseWidget</li>
+<li>tkinter.Misc</li>
+<li>tkinter.Pack</li>
+<li>tkinter.Place</li>
+<li>tkinter.Grid</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="friendly_ground_truth.view.preview_window.PreviewFrame.navigate_to_patch"><code class="name flex">
+<span>def <span class="ident">navigate_to_patch</span></span>(<span>self, pos)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Navigate to the patch containing the given coordinates in the original
+image.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>pos</code></strong></dt>
+<dd>The position in the image to go to.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>None</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def navigate_to_patch(self, pos):
+    &#34;&#34;&#34;
+    Navigate to the patch containing the given coordinates in the original
+    image.
+
+    Args:
+        pos: The position in the image to go to.
+
+    Returns:
+        None
+    &#34;&#34;&#34;
+
+    self.controller.navigate_to_patch(pos)</code></pre>
+</details>
+</dd>
+<dt id="friendly_ground_truth.view.preview_window.PreviewFrame.new_image"><code class="name flex">
+<span>def <span class="ident">new_image</span></span>(<span>self, img)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Reset the image on the canvas.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>img</code></strong></dt>
+<dd>The image.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>None</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def new_image(self, img):
+    &#34;&#34;&#34;
+    Reset the image on the canvas.
+
+    Args:
+        img: The image.
+
+    Returns:
+        None
+    &#34;&#34;&#34;
+    self.img = img
+    self._canvas.new_image(img)</code></pre>
+</details>
+</dd>
+<dt id="friendly_ground_truth.view.preview_window.PreviewFrame.set_theme"><code class="name flex">
+<span>def <span class="ident">set_theme</span></span>(<span>self, style)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_theme(self, style):
+
+    self._canvas.set_theme(style)</code></pre>
+</details>
+</dd>
+<dt id="friendly_ground_truth.view.preview_window.PreviewFrame.update_image"><code class="name flex">
+<span>def <span class="ident">update_image</span></span>(<span>self, img)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Update the preview image.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>img</code></strong></dt>
+<dd>The image to show in the preview.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>None</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_image(self, img):
+    &#34;&#34;&#34;
+    Update the preview image.
+
+    Args:
+        img: The image to show in the preview.
+
+    Returns:
+        None
+    &#34;&#34;&#34;
+    self.img = img
+    self._canvas.set_image(self.img)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="friendly_ground_truth.view.preview_window.PreviewWindow"><code class="flex name class">
+<span>class <span class="ident">PreviewWindow</span></span>
+<span>(</span><span>img, controller, style)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A window for previewing an image.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>img</code></strong></dt>
+<dd>The image for previewing</dd>
+</dl>
+<p>Construct a toplevel widget with the parent MASTER.</p>
+<p>Valid resource names: background, bd, bg, borderwidth, class,
+colormap, container, cursor, height, highlightbackground,
+highlightcolor, highlightthickness, menu, relief, screen, takefocus,
+use, visual, width.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class PreviewWindow(tk.Toplevel):
+    &#34;&#34;&#34;
+    A window for previewing an image.
+
+    Attributes:
+        img: The image for previewing
+    &#34;&#34;&#34;
+
+    def __init__(self, img, controller, style):
+        self._base = tk.Toplevel()
+        self._base.title(&#34;Preview&#34;)
+        self._base.geometry(&#34;1000x800+200+200&#34;)
+
+        self._frame = PreviewFrame(self._base, img, controller, style)
+
+        self._frame.pack(fill=&#39;both&#39;, expand=True)
+
+    def update_image(self, img):
+        &#34;&#34;&#34;
+        Update the preview image.
+
+        Args:
+            img: The image to display.
+
+        Returns:
+            None.
+        &#34;&#34;&#34;
+
+        self._frame.update_image(img)
+
+    def set_theme(self, style):
+
+        self._frame.set_theme(style)
+
+    def destroy(self):
+
+        self._base.destroy()</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>tkinter.Toplevel</li>
+<li>tkinter.BaseWidget</li>
+<li>tkinter.Misc</li>
+<li>tkinter.Wm</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="friendly_ground_truth.view.preview_window.PreviewWindow.destroy"><code class="name flex">
+<span>def <span class="ident">destroy</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Destroy this and all descendants widgets.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def destroy(self):
+
+    self._base.destroy()</code></pre>
+</details>
+</dd>
+<dt id="friendly_ground_truth.view.preview_window.PreviewWindow.set_theme"><code class="name flex">
+<span>def <span class="ident">set_theme</span></span>(<span>self, style)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_theme(self, style):
+
+    self._frame.set_theme(style)</code></pre>
+</details>
+</dd>
+<dt id="friendly_ground_truth.view.preview_window.PreviewWindow.update_image"><code class="name flex">
+<span>def <span class="ident">update_image</span></span>(<span>self, img)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Update the preview image.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>img</code></strong></dt>
+<dd>The image to display.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>None.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_image(self, img):
+    &#34;&#34;&#34;
+    Update the preview image.
+
+    Args:
+        img: The image to display.
+
+    Returns:
+        None.
+    &#34;&#34;&#34;
+
+    self._frame.update_image(img)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="friendly_ground_truth.view" href="index.html">friendly_ground_truth.view</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="friendly_ground_truth.view.preview_window.PreviewFrame" href="#friendly_ground_truth.view.preview_window.PreviewFrame">PreviewFrame</a></code></h4>
+<ul class="">
+<li><code><a title="friendly_ground_truth.view.preview_window.PreviewFrame.navigate_to_patch" href="#friendly_ground_truth.view.preview_window.PreviewFrame.navigate_to_patch">navigate_to_patch</a></code></li>
+<li><code><a title="friendly_ground_truth.view.preview_window.PreviewFrame.new_image" href="#friendly_ground_truth.view.preview_window.PreviewFrame.new_image">new_image</a></code></li>
+<li><code><a title="friendly_ground_truth.view.preview_window.PreviewFrame.set_theme" href="#friendly_ground_truth.view.preview_window.PreviewFrame.set_theme">set_theme</a></code></li>
+<li><code><a title="friendly_ground_truth.view.preview_window.PreviewFrame.update_image" href="#friendly_ground_truth.view.preview_window.PreviewFrame.update_image">update_image</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="friendly_ground_truth.view.preview_window.PreviewWindow" href="#friendly_ground_truth.view.preview_window.PreviewWindow">PreviewWindow</a></code></h4>
+<ul class="">
+<li><code><a title="friendly_ground_truth.view.preview_window.PreviewWindow.destroy" href="#friendly_ground_truth.view.preview_window.PreviewWindow.destroy">destroy</a></code></li>
+<li><code><a title="friendly_ground_truth.view.preview_window.PreviewWindow.set_theme" href="#friendly_ground_truth.view.preview_window.PreviewWindow.set_theme">set_theme</a></code></li>
+<li><code><a title="friendly_ground_truth.view.preview_window.PreviewWindow.update_image" href="#friendly_ground_truth.view.preview_window.PreviewWindow.update_image">update_image</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.8.1</a>.</p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad()</script>
+</body>
+</html>
