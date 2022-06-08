@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/friendly_ground_truth-master.iml" filepath="$PROJECT_DIR$/.idea/friendly_ground_truth-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/friendly_ground_truth_nolog.iml" filepath="$PROJECT_DIR$/.idea/friendly_ground_truth_nolog.iml" />
     </modules>
   </component>
 </project>

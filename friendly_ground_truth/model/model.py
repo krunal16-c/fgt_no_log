@@ -14,8 +14,9 @@ import numpy as np
 from skimage import io, img_as_float, img_as_uint, img_as_ubyte, img_as_bool
 from skimage.util.shape import view_as_blocks
 from skimage.filters import threshold_otsu
+from skimage.filters import thresholding
 from skimage import color
-from skimage.draw import disk
+from skimage.draw import circle
 
 
 # module_logger = logging.getLogger('friendly_gt.model')
@@ -133,7 +134,8 @@ class Image():
         # self.logger.debug("Loading image.")
 
         img = io.imread(self.path)
-        img = color.rgb2gray(img)
+        if np.ndim(img)==3:
+            img = color.rgb2gray(img)
         img = img_as_float(img)
 
         self._image = img

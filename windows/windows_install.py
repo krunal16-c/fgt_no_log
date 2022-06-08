@@ -19,7 +19,7 @@ from tkinter import ttk
 from tkinter import messagebox
 
 FGT_INSTALL_DIR = "friendly_gt"
-FGT_FOLDER = "./friendly_gt/"
+FGT_FOLDER = "C:/Users/kruna/Desktop/friendly_gt"
 
 HOME = os.path.expanduser("~")
 
@@ -32,7 +32,7 @@ START_MENU = r"AppData\Roaming\Microsoft\Windows\Start Menu\Programs"
 START_MENU_PATH = os.path.join(HOME, START_MENU)
 
 if sys.platform == 'win32':
-    from win32com.shell import shell, shellcon
+    from win32comext.shell import shell, shellcon
 
     try:
         desktop = shell.SHGetFolderPath(0, shellcon.CSIDL_DESKTOP, 0, 0)
